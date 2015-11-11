@@ -1,2 +1,2 @@
-# CodeStack
-Stack of Code
+# Templates
+Code Templates
