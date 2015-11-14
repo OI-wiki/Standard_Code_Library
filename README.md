@@ -4,6 +4,8 @@ Standard_Code_Library, a.k.a, Templates.
 
 This library is especially for OIers and ICPCers in their journey exploring the area of competitive programming.
 
+**Note that we only have C++ codes at the moment, add your favorite languages if you want!**
+
 ## What's Included?
 
 :triangular_flag_on_post: Nothing much at the moment...
