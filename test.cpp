@@ -1,13 +1,10 @@
 /**
- * @name TEMPLATE.cpp
- * @subject Segment Tree
+ * @name test.cpp
+ * @subject For CI Testing
  * @author SCaffrey(sirius.caffrey@gmail.com)
  * @Copyright DWTFABG
- * @comment This is a segment tree implemented with pointers.(kidding)
+ * @comment This is a file for CI testing.
  */
-
-// I used DocBlockr to make this comment!
-// Simply type '/**' in the first line
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
@@ -33,6 +30,7 @@ int main() {
         fprintf(stderr, "%s\n", tee);
         return 1;
       } else {
+        fprintf(stderr,"Passed CppLint Tests!\n");
         return 0;
       }
     }
