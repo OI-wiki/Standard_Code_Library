@@ -18,7 +18,7 @@ Note that we are using DWTFABG License so just **DO WHAT THE FUCK AND BE GOOD**
 
 Hope you enjoy learning through this repo.
 
-It is strongly recommended to mention the original author while using the codes in this repo, but not forced.
+It is strongly recommended to mention the original author while using the codes in this repo.
 
 ## Contributing?
 
