@@ -2,7 +2,7 @@
  * @name TEMPLATE.cpp
  * @subject Segment Tree
  * @author SCaffrey(sirius.caffrey@gmail.com)
- * @license DWTFABG
+ * @Copyright DWTFABG
  * @comment This is a segment tree implemented with pointers.(kidding)
  */
 
