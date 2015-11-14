@@ -2,6 +2,6 @@ language: cpp
 compiler:
   - gcc
 script:
-  - g++ ./test/test.cpp -o ./test/tee
-  - ./test/tee
+  - g++ test.cpp -o tee
+  - ./tee
   - cat files.log
