@@ -12,6 +12,8 @@ We can also follow a [zh-google-styleguide](http://zh-google-styleguide.readthed
 
 A tool called [cpplint](https://pypi.python.org/pypi/cpplint) can be used to help your check your codes. Also at [cpplint.py](https://github.com/google/styleguide/blob/gh-pages/cpplint/cpplint.py).
 
+Something else [for emacs](https://raw.githubusercontent.com/google/styleguide/gh-pages/google-c-style.el).
+
 Here are something you might forget:
 
 - [ ] 将函数变量尽可能置于最小作用域内, 并在变量声明时进行初始化
