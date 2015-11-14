@@ -1,6 +1,6 @@
 # Contributing
 
-First, note that this library is under **GPL**, so please add only your **own** codes.
+First, note that this library is under **DWTFABG**, so please add only your **own** codes and make sure that you agree with the terms in that license.
 
 ## Methods
 

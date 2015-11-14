@@ -12,6 +12,14 @@ This library is especially for OIers and ICPCers in their journey exploring the 
 
 Check out [#2](https://github.com/24OI/Standard_Code_Library/issues/2) for more details on current status.
 
+## Using?
+
+Note that we are using DWTFABG License so just **DO WHAT THE FUCK AND BE GOOD**
+
+Hope you enjoy learning through this repo.
+
+It is strongly recommended to mention the original author while using the codes in this repo, but not forced.
+
 ## Contributing?
 
 See [CONTRIBUTING.md](CONTRIBUTING.md).
