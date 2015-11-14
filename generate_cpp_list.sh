@@ -1,12 +1,11 @@
 SPATH='.'
 SS='python cpplint.py'
-SPACE=' '
 FILELIST(){
 for filename in $(ls $SPATH)
 do
 	if [ -f $filename ];then
 		# exec 'cpplint' $filename
-		SS=$SS$SPACE$filename
+		SS=$SS' '$SPATH'/'$filename
 	elif [ -d $filename ];then
 		#echo Directory： $filename
 		cd $filename
