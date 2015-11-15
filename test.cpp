@@ -30,7 +30,7 @@ int main() {
         fprintf(stderr, "%s\n", tee);
         return 1;
       } else {
-        fprintf(stderr,"Passed CppLint Tests!\n");
+        fprintf(stderr, "Passed CppLint Tests!\n");
         return 0;
       }
     }
