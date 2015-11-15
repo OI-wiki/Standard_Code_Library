@@ -4,7 +4,7 @@
  * @author CJSoft (egwcyh@qq.com)
  * @Copyright DWTFABG
  * @comment returns a vector containing primes from 2 to upperBound
- * @tests 
+ * @tests http://codevs.cn/problem/2741/
  */
 
 /**
