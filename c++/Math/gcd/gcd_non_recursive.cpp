@@ -10,7 +10,7 @@
 
 int a, b, c;
 /**
- * gcd function
+ * gcd
  * @param  a [int]
  * @param  b [int]
  * @return  greatest_common_divisor of a and b [int]
