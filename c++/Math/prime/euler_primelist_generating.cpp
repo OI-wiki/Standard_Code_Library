@@ -32,9 +32,12 @@ std::vector <int> genPrime(int upperBound) {
     std::vector <int> vec_rtn(prime, prime+cursor);
     return vec_rtn;
 }
+int n;
 int main() {
     std::vector <int> p = genPrime(1000);
+    scanf("%d",&n);
     for (int i = 0; i < p.size(); ++i) {
-        printf("%d\n", p[i]);
+        if (p[i] > n)return 0;
+        printf("%d ", p[i]);
     }
 }
