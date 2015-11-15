@@ -35,7 +35,7 @@ std::vector <int> genPrime(int upperBound) {
 int n;
 int main() {
     std::vector <int> p = genPrime(1000);
-    scanf("%d",&n);
+    scanf("%d", &n);
     for (int i = 0; i < p.size(); ++i) {
         if (p[i] > n)return 0;
         printf("%d ", p[i]);
