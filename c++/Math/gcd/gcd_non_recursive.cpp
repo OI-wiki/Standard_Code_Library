@@ -9,7 +9,12 @@
 #include <cstdio>
 
 int a, b, c;
-
+/**
+ * gcd function
+ * @param  a [int]
+ * @param  b [int]
+ * @return  greatest_common_divisor of a and b [int]
+ */
 int gcd(int a, int b) {
   while (b) {
     c = a % b;
