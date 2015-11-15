@@ -1,4 +1,4 @@
-# Standard_Code_Library for OI and ICPC [![Build Status](https://img.shields.io/travis/24OI/Standard_Code_Library.svg?style=flat-square)](https://github.com/24OI/Standard_Code_Library)
+# Standard_Code_Library for OI and ICPC [![Build Status](https://img.shields.io/travis/24OI/Standard_Code_Library.svg?style=flat-square)](https://github.com/24OI/Standard_Code_Library) [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/24OI/standard_code_library/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 Standard_Code_Library, a.k.a, Templates.
 
