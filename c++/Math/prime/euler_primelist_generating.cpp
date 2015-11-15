@@ -6,9 +6,6 @@
  * @comment returns a vector containing primes from 2 to upperBound
  */
 
-// I used DocBlockr to make this comment!
-// Simply type '/**' in the first line
-
 /**
  * Need memory.h or cstring for memset func.
  * Need vector for whatever...

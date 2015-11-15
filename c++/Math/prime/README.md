@@ -5,4 +5,4 @@ This this collection of prime-related algorithms provide you with ways to solve 
 2. I need a primelist.  
 
 Currently, only euler primelist generating is available.  
-Check this <euler_primelist_generating.cpp>  
+Check this [euler_primelist_generating.cpp](euler_primelist_generating.cpp)  
