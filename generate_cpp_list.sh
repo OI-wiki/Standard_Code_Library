@@ -3,6 +3,7 @@ SS='python cpplint.py'
 FILELIST(){
 for filename in $(ls $SPATH)
 do
+	SPATH=`pwd`
 	if [ -f $filename ];then
 		# exec 'cpplint' $filename
 		SS=$SS' '$SPATH'/'$filename

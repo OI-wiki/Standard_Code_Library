@@ -1,5 +1,5 @@
 /**
- * @name TEMPLATE.cpp
+ * @name TEMPLATE.CPP
  * @subject Segment Tree
  * @author SCaffrey(sirius.caffrey@gmail.com)
  * @Copyright DWTFABG

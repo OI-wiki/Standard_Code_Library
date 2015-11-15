@@ -26,3 +26,8 @@
 *.exe
 *.out
 *.app
+
+# Test files
+tee
+file.list
+files.log
