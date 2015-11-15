@@ -25,9 +25,9 @@ typedef long long LL;// NOLINT
 int pow(int a, int b, int c) {
   int res = 1, bas = a;
   while (b) {
-    if (b & 1)res = (LL)res * bas % n;
+    if (b & 1)res = (LL)res * bas % c;
     // Transform to long long in case of overflow.
-    bas = bas * bas % n;
+    bas = bas * bas % c;
     b >>= 1;
   }
   return res;
