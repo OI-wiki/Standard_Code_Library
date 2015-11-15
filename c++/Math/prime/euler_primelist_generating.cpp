@@ -1,9 +1,10 @@
 /**
  * @name euler_primelist_generating.cpp
- * @subject Math
+ * @subject euler_primelist
  * @author CJSoft (egwcyh@qq.com)
  * @Copyright DWTFABG
  * @comment returns a vector containing primes from 2 to upperBound
+ * @tests 
  */
 
 /**
@@ -12,9 +13,10 @@
  */
 
 #include <cstring>
+#include <cstdio>
 #include <vector>
 
-std::vector < int > genPrime(int upperBound) {
+std::vector <int> genPrime(int upperBound) {
     bool *isPrime = new bool[upperBound+7];
     int *prime = new int[upperBound+7];
     memset(isPrime, true, upperBound+7);
@@ -27,17 +29,12 @@ std::vector < int > genPrime(int upperBound) {
             if (i%prime[j] == 0)break;
         }
     }
-    std::vector < int > vec_rtn(prime, prime+cursor);
+    std::vector <int> vec_rtn(prime, prime+cursor);
     return vec_rtn;
 }
-
-/*-------------------------------------------------------*/
-
-#include <iostream>
 int main() {
-    using std::out, std::endl;
-    vector < int > p = genPrime(1000);
+    std::vector <int> p = genPrime(1000);
     for (int i = 0; i < p.size(); ++i) {
-        cout << p[i] << endl;
+        printf("%d\n", p[i]);
     }
 }
