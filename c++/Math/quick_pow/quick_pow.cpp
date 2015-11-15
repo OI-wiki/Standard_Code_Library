@@ -1,5 +1,5 @@
 /**
- * @name quick_pos.cpp
+ * @name quick_pow.cpp
  * @subject quick_pow algorithm
  * @author SCaffrey(sirius.caffrey@gmail.com)
  * @Copyright DWTFABG
