@@ -27,20 +27,6 @@ struct node {
   int l, r, md;
   int mx;
   node *ls, *rs;
-  /*inline node(int ll = 0, int rr = 0):l(ll), r(rr),// NOLINT
-      md(ll + (rr - ll >> 1)) {
-    if (l == r) {
-      scanf("%d", &mx);
-      ls = rs = NULL;
-      return;
-    }
-    ls = new node(ll, md);
-    rs = new node(md + 1, rr);
-    mx = std::max(ls->mx, rs->mx);
-  }*/
-  // NOTE: if you leave that function above there,
-  // strange things happen.
-  // can anyone explain why?
   /**
    * seg query
    * @param  ll [int]
