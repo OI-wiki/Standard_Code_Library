@@ -74,8 +74,8 @@ void Maintain(int &x, bool flag) {// NOLINT
 
 /**
  * Insert a new point to Size Balanced Tree
- * @param x   [description]
- * @param key [description]
+ * @param x   [int]
+ * @param key [int]
  */
 void insert(int &x, int key) {// NOLINT
     if (x == nil) {
@@ -94,8 +94,8 @@ void insert(int &x, int key) {// NOLINT
 
 /**
  * Remove a point from Size Balanced Tree
- * @param x   [description]
- * @param key [description]
+ * @param x   [int]
+ * @param key [int]
  */
 void remove(int &x, int key) {// NOLINT
     if (x == nil) {
@@ -111,6 +111,12 @@ void remove(int &x, int key) {// NOLINT
         tree[tree[x].left].size + tree[tree[x].right].size + 1;
 }
 
+/**
+ * Rank
+ * @param  x   [int]
+ * @param  key [int]
+ * @return     [the key_th rank]
+ */
 int rank(int x, int key) {
     if (key == tree[tree[x].right].size + 1) return tree[x].key;
     if (key < tree[tree[x].right].size + 1) return rank(tree[x].right, key);
