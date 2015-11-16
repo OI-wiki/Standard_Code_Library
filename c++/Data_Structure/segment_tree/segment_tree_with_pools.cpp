@@ -87,7 +87,7 @@ struct node {
  */
 inline node* newnode(int ll, int rr) {
   node* ans = tail++;
-  ans->l = ll; ans->r = rr;ans->md = ll + (rr - ll >> 1);
+  ans->l = ll; ans->r = rr; ans->md = ll + (rr - ll >> 1);
   if (ll == rr) {
     scanf("%d", &(ans->mx));
     ans->ls = ans->rs = NULL;
@@ -100,15 +100,15 @@ inline node* newnode(int ll, int rr) {
 }
 
 int main() {
-  while(scanf("%d%d",&n,&m) != EOF){
+  while (~scanf("%d%d", &n, &m)) {
     tail = pool;
     node* root = newnode(1, n);
     while (m--) {
       scanf("%s%d%d", buf, &a, &b);
       if (buf[0] == 'Q') {
-        printf("%d\n",root->query(a,b));
+        printf("%d\n", root->query(a, b));
       } else {
-        root->modify(a,b);
+        root->modify(a, b);
       }
     }
   }
