@@ -6,6 +6,7 @@
  * @comment This is a non_recursive GCD algorithm.
  * @tests http://codevs.cn/problem/1212/
  */
+
 #include <cstdio>
 
 int a, b, c;
@@ -15,6 +16,7 @@ int a, b, c;
  * @param  b [int]
  * @return  greatest_common_divisor of a and b [int]
  */
+
 int gcd(int a, int b) {
   while (b) {
     c = a % b;
