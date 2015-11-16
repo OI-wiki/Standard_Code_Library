@@ -32,3 +32,5 @@ tee
 file.list
 files.log
 a
+.cpp~
+.md~
