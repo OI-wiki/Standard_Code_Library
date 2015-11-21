@@ -14,6 +14,8 @@ A tool called [cpplint](https://pypi.python.org/pypi/cpplint) can be used to hel
 
 Something else [for emacs](https://raw.githubusercontent.com/google/styleguide/gh-pages/google-c-style.el).
 
+You might want to take a look at [STYLING_ASSISTANCE.md](STYLING_ASSISTANCE.md)
+
 Here are something you might forget:
 
 - [ ] 将函数变量尽可能置于最小作用域内, 并在变量声明时进行初始化
