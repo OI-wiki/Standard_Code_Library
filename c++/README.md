@@ -1,6 +1,6 @@
 # Standard_Code_Library for OI and ICPC [![Build Status](https://img.shields.io/travis/24OI/Standard_Code_Library.svg?style=flat-square)](https://github.com/24OI/Standard_Code_Library)
 
-Standard_Code_Library, a.k.a, Templates.
+Standard_Code_Library, a.k.a, Templates. [![Join the chat at https://gitter.im/24OI/Standard_Code_Library](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/24OI/Standard_Code_Library?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 This library is especially for OIers and ICPCers in their journey exploring the area of competitive programming.
 
