@@ -14,7 +14,7 @@ Check out [#2](https://github.com/24OI/Standard_Code_Library/issues/2) for more 
 
 ## LICENSE?
 
-Note that we are using SATA License so just **Star And Thank Author**
+Note that we are using SATA License so just **Star And Thank Author**.
 
 Hope you enjoy learning through this repo.
 
