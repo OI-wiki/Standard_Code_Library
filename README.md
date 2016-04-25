@@ -12,9 +12,9 @@ This library is especially for OIers and ICPCers in their journey exploring the 
 
 Check out [#2](https://github.com/24OI/Standard_Code_Library/issues/2) for more details on current status.
 
-## Using?
+## LICENSE?
 
-Note that we are using DWTFABG License so just **DO WHAT THE FUCK AND BE GOOD**
+Note that we are using SATA License so just **Star And Thank Author**
 
 Hope you enjoy learning through this repo.
 
