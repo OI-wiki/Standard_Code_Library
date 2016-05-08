@@ -26,7 +26,6 @@ Here are something you might forget:
 - [ ] 只在定义移动构造函数与移动赋值操作时使用右值引用. 不要使用 `std::forward`
 - [ ] 我们不允许使用缺省函数参数，少数极端情况除外。尽可能改用函数重载
 - [ ] 我们不使用 C++ 异常
-- [ ] **使用 C++ 的类型转换, 如`static_cast<>()`. 不要使用`int y = (int)x`或`int y = int(x)`等转换方式**
 - [ ] 只在记录日志时使用流（`string`之类的除外）
 - [ ] 对于迭代器和其他模板对象使用前缀形式`(++i)`的自增, 自减运算符
 - [ ] 我们强烈建议你在任何可能的情况下都要使用`const`. 此外有时改用 C++11 推出的`constexpr`更好。在 C++11 里，用`constexpr`来定义真正的常量，或实现常量初始化
@@ -65,3 +64,4 @@ You shall be editing `c++.sublime-settings` as below:
 ## Other Notes(Not forced)
 
 It might be a good idea to add empty lines into where you find necessary to make things clear.
+
