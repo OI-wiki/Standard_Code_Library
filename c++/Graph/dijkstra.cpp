@@ -45,8 +45,8 @@ inline void add(int s, int t, int w) {
   e[++cnt].t = s; e[cnt].x = head[t]; head[t] = cnt; e[cnt].w = w;
 }
 int n, m, s, t;
-typedef std::pair<int, int> PII;
-std::priority_queue<PII, std::vector<PII>, std::greater<PII> > Q;
+typedef std::pair<int, int> PII;// NOLINT
+std::priority_queue<PII, std::vector<PII>, std::greater<PII> > Q;// NOLINT
 int dis[MAXN], vis[MAXN];
 void dij() {
   while (!Q.empty()) Q.pop();
@@ -74,7 +74,7 @@ int u, v, w;
 int main() {
   scanf("%d%d%d%d", &n, &m, &s, &t);
   f(i, 0, m) {
-    scanf("%d%d%d",&u, &v, &w);
+    scanf("%d%d%d", &u, &v, &w);
     add(u, v, w);
   }
   dij();
