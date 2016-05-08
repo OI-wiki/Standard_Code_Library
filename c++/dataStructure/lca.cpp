@@ -1,5 +1,5 @@
 /**
- * @author SCaffrey(sirius.caffrey@gmail.com)
+ * @Author SCaffrey(sirius.caffrey@gmail.com)
  * @Copyright SATA
  * http://codevs.cn/problem/2370/
  */
