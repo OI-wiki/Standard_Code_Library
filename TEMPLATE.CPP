@@ -2,7 +2,7 @@
  * @name TEMPLATE.CPP
  * @subject Segment Tree
  * @author SCaffrey(sirius.caffrey@gmail.com)
- * @Copyright Sata
+ * @Copyright SATA(The Star And Thank Author License)
  * @comment This is a segment tree implemented with pointers.(kidding)
  */
 
