@@ -6,7 +6,7 @@
 
 #include <cstdio>// NOLINT
 #include <cstring>// NOLINT
-#include <bits/stdc++.h>// NOLINT
+#include <algorithm>// NOLINT
 #include <cmath>// NOLINT
 #define x1 x11
 #define y1 y11
