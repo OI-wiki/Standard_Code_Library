@@ -34,3 +34,6 @@ files.log
 a
 *.cpp~
 *.md~
+*.in
+*.out
+*.res
