@@ -48,7 +48,6 @@ void update(LL *a, int x, int v) {
   }
 }
 int main() {
-
   scanf("%d", &n);
   g(i, 1, n) scanf("%lld", s + i), s[i] += s[i - 1];
   scanf("%d", &m);
