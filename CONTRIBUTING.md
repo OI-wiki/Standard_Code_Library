@@ -4,7 +4,7 @@ First, note that this library is under **SATA**, so please add only your **own**
 
 ## Methods
 
-:star2: Add what you think should be added into [#2](https://github.com/24OI/Standard_Code_Library/issues/2).
+:star2: Open an issue and tell us what you think should be added.
 
 :star2: Create a PR with your code(which SHOULD **pass the specific tests**, **follow the [STYLING_GUIDE.md](STYLING_GUIDE.md)**, **have meaningful comments and commit messages**).
 

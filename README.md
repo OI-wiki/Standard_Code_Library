@@ -1,6 +1,6 @@
-# Standard_Code_Library for OI and ICPC [![Build Status](https://travis-ci.com/imcaffrey/Standard_Code_Library.svg?token=YAEpzVbCmzDPZjz4MBKy&branch=master)](https://github.com/imcaffrey/Standard_Code_Library)
+# Standard_Code_Library for OI and ICPC [![Build Status](https://img.shields.io/travis/Ir1d/Standard_Code_Library.svg?style=flat-square)](https://github.com/Ir1d/Standard_Code_Library)
 
-Standard_Code_Library, a.k.a, Templates. [![Join the chat at https://gitter.im/24OI/Standard_Code_Library](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/24OI/Standard_Code_Library?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+Standard_Code_Library, a.k.a, Templates.
 
 This library is especially for OIers and ICPCers in their journey exploring the area of competitive programming.
 
@@ -10,7 +10,7 @@ This library is especially for OIers and ICPCers in their journey exploring the 
 
 :triangular_flag_on_post: Nothing much at the moment...
 
-Check out [#2](https://github.com/24OI/Standard_Code_Library/issues/2) for more details on current status.
+But I'm adding details.
 
 ## LICENSE?
 

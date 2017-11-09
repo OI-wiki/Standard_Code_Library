@@ -1,17 +1,11 @@
 /**
- * @name TEMPLATE.CPP
- * @subject Segment Tree
- * @author Ir1d(sirius.caffrey@gmail.com)
- * @copyright SATA(The Star And Thank Author License)
- * @comment This is a segment tree implemented with pointers.(kidding)
+ * @authors Ir1d (sirius.caffrey@gmail.com)
+ * @date    2017-09-07 15:38:41
+ * @license Star And Thank Author
  */
-
-// I used DocBlockr to make this comment!
-// Simply type '/**' in the first line
 
 #include <cstdio>// NOLINT
 #include <cstring>// NOLINT
-#include <bits/stdc++.h>// NOLINT
 #include <cmath>// NOLINT
 #define x1 x11
 #define y1 y11
@@ -37,12 +31,33 @@ const int oo = ~0u >> 2;
 const double pi = acos(-1.0);
 const double EPS = 1e-8;
 const int MAXN = 100033;
-
+void get() {
+  d[0] = d[1]  =0;
+  int j = 0;
+  f(i, 1, m) {
+    j = d[i];
+    while (j && p[i] != p[j]) j = d[j];
+      if (p[i] == p[j]) d[i + 1] = j + 1;
+      else d[i + 1] = 0;
+  }
+}
+void kmp() {
+  get();
+  int j = 0;
+  f(i, 0, n) {
+    while (j && t[i] != p[j]) j = d[j];
+    if (t[i] == p[j] ++j;
+    if (j == m) ++ans;
+  )
+  }
+}
 int main() {
 #ifdef LOCAL
   freopen("a.in", "r", stdin);
   freopen("a.out", "w", stdout);
 #endif
+
+
 
 #ifdef LOCAL
   fclose(stdin);
@@ -50,4 +65,3 @@ int main() {
 #endif
   return 0;
 }
-

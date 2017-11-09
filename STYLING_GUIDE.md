@@ -2,6 +2,8 @@
 
 **Note that we were talking about C++**
 
+**tl;dr: Every code should pass the cpplint provided in the repo. Run test.cpp to test on your own.**
+
 ## Main
 
 We might be following [Google's Styling Guide](https://github.com/google/styleguide).
@@ -52,8 +54,8 @@ You shall be editing `c++.sublime-settings` as below:
 
 ```json
 {
-    "tab_size": 2,
-    "translate_tabs_to_spaces": true,
+  "tab_size": 2,
+  "translate_tabs_to_spaces": true,
 	"line_numbers": true,
 	"word_wrap": true,
 	"wrap_width": 80,
