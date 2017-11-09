@@ -1,4 +1,10 @@
-# Standard_Code_Library for OI and ICPC [![Build Status](https://img.shields.io/travis/Ir1d/Standard_Code_Library.svg?style=flat-square)](https://github.com/Ir1d/Standard_Code_Library)
+# Standard_Code_Library for OI and ICPC [![build-badge]][repo-link]
+
+[![build-badge]][repo-link]
+
+[build-badge]: https://img.shields.io/badge/Google%20Hosts-Telegram-brightgreen.svg?style=flat-square
+
+[repo-link]: https://github.com/Ir1d/Standard_Code_Library
 
 Standard_Code_Library, a.k.a, Templates.
 
