@@ -1,5 +1,5 @@
 /**
- * @Author Ir1d(sirius.caffrey@gmail.com)
+ * @Author Ir1d (sirius.caffrey@gmail.com)
  * @Copyright SATA
  * @Example http://poj.org/problem?id=1509
  */

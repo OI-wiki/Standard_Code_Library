@@ -1,7 +1,7 @@
 /**
  * @name primeValidating.cpp
  * @subject primeValidating algorithm
- * @author SCaffrey(sirius.caffrey@gmail.com)
+ * @author SCaffrey (sirius.caffrey@gmail.com)
  * @Copyright SATA
  * @comment These are prime_validating algorithms, including brutal and Miler_Rabin.
  * @example http://www.51nod.com/onlineJudge/questionCode.html#!problemId=1106
