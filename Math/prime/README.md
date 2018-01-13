@@ -5,6 +5,6 @@ This collection of prime-related algorithms provides you with ways to solve thes
 1. Is it a prime?  
 2. I need a primelist.  
 
-Check this [euler_primelist_generating.cpp](euler_primelist_generating.cpp).
+Check this [eulerPrimelistGenerating.cpp](eulerPrimelistGenerating.cpp).
 
-Check this [prime_validating.cpp](prime_validating.cpp).(Includes Miller_Rabin algorithm)
+Check this [primeValidating.cpp](primeValidating.cpp).(Includes Miller_Rabin algorithm)
