@@ -48,7 +48,7 @@ void get() {
       if (i % pri[j] == 0) {
         phi[i * pri[j]] = phi[i] * pri[j];
         break;
-      } else phi[i * pri[j]] = phi[i] * (pri[j] - 1);
+      } else phi[i * pri[j]] = phi[i] * (pri[j] - 1); // NOLINT
     }
   }
 }
@@ -85,7 +85,7 @@ int main() {
   solve(n);
 
 #ifdef LOCAL
-  fclose(stdin); 
+  fclose(stdin);
   fclose(stdout);
 #endif
   return 0;

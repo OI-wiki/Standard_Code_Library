@@ -1,7 +1,7 @@
 /**
- * @Author Ir1d (sirius.caffrey@gmail.com)
+ * @Author Ir1d (srius.caffrey@gmail.com)
  * @Copyright SATA
- * @Example http://codevs.cn/problem/2741/
+ * @Example http://codevs.cn/problem/1200/
  */
 #include <cstdio>// NOLINT
 #include <cstring>// NOLINT
@@ -32,28 +32,26 @@ const double pi = acos(-1.0);
 const double EPS = 1e-8;
 const int MAXN = 100033;
 
-int n;
-int pri[MAXN], cnt;
-bool vis[MAXN];
-void init() {
-  g(i, 2, n) {
-    if (!vis[i]) pri[cnt++] = i;
-    f(j, 0, cnt) {
-      if (i * pri[j] > n) break;
-      vis[i * pri[j]] = 1;
-      if (i % pri[j] == 0) break;
-    }
+int a, b;
+int extGcd(int a, int b, int &x, int &y) { // NOLINT
+  if (b == 0) {
+    x = 1; y = 0;
+    return a;
   }
+  int res = extGcd(b, a % b, y, x);
+  y -= a / b * x;
+  return res;
 }
+int x, y;
 int main() {
 #ifdef LOCAL
   freopen("a.in", "r", stdin);
   freopen("a.out", "w", stdout);
 #endif
 
-  scanf("%d", &n);
-  init();
-  f(i, 0, cnt) printf("%d ", pri[i]);
+  scanf("%d%d", &a, &b);
+  extGcd(a, b, x, y);
+  printf("%d\n", (x % b + b) % b);
 
 #ifdef LOCAL
   fclose(stdin);
@@ -61,4 +59,5 @@ int main() {
 #endif
   return 0;
 }
+
 
