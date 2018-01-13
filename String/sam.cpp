@@ -55,10 +55,10 @@ void add(int c) {
     p->ch[c] = np; p = p->f;
   }
   if (!p) np->f = root;
-  else {
+  else { // NOLINT
     node *q = p->ch[c];
     if (p->v + 1 == q->v) np->f = q;
-    else {
+    else { // NOLINT
       node *nq = newnode(p->v + 1);
       f(i, 0, 26) nq->ch[i] = q->ch[i];
       nq->f = q->f; q->f = np->f = nq;

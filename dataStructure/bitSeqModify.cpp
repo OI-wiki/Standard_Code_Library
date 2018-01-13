@@ -1,5 +1,5 @@
 /**
- * @author Ir1d(sirius.caffrey@gmail.com)
+ * @Author Ir1d(sirius.caffrey@gmail.com)
  * @Copyright SATA(The Star And Thank Author License)
  * @Example http://www.codevs.cn/problem/1082/
  */

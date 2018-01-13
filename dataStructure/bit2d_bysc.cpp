@@ -31,7 +31,7 @@ const double pi = acos(-1.0);
 const double EPS = 1e-8;
 const int MAXN = 100033;
 
-inline void read(int &x) {// NOLINT
+inline void read(int &x) { // NOLINT
   char c = getchar();
   int f = 1;
   while (c < '0' || c > '9') {
@@ -48,16 +48,16 @@ inline void read(int &x) {// NOLINT
 int n;
 int t[1033][1033];
 void upd(int x, int y) {
-  for (int i = x; i; i -= i & -i) {
-    for (int j = y; j; j -= j & -j) {
+  for (int i = x; i <= n; i += i & -i) {
+    for (int j = y; j <= n; j += j & -j) {
       t[i][j] ^= 1;
     }
   }
 }
 int get(int x, int y) {
   int res = 0;
-  for (int i = x; i <= n; i += i & -i) {
-    for (int j = y; j <= n; j += j & -j) {
+  for (int i = x; i; i -= i & -i) {
+    for (int j = y; j; j -= j & -j) {
       res += t[i][j];
     }
   }
@@ -81,12 +81,13 @@ int main() {
       scanf("%s%d%d", buf, &x1, &y1);
       if (buf[0] == 'C') {
         scanf("%d%d", &x2, &y2);
-        upd(x1 - 1, y1 - 1);
-        upd(x2, y2);
-        upd(x2, y1 - 1);
-        upd(x1 - 1, y2);
+        upd(x1, y1);
+        if (x2 < n && y2 < n) upd(x2 + 1, y2 + 1);
+        if (x2 < n) upd(x2 + 1, y1);
+        if (y2 < n) upd(x1, y2 + 1);
       } else {
         printf("%d\n", get(x1, y1));
+//        printf("%d\n", (get(n, n) + get(x1 - 1, y1 - 1) - get(n, y1 - 1) - get(x1 - 1, n))); NOLINT
       }
     }
     puts("");
@@ -98,4 +99,5 @@ int main() {
 #endif
   return 0;
 }
+
 
