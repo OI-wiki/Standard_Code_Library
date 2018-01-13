@@ -1,7 +1,7 @@
 /**
  * @Author SCaffrey(sirius.caffrey@gmail.com)
  * @Copyright SATA
- * http://www.icpc.moe/onlinejudge/showProblem.do?problemCode=2334
+ * @Example http://www.icpc.moe/onlinejudge/showProblem.do?problemCode=2334
  */
 #include <cstdio>// NOLINT
 #include <cstring>// NOLINT

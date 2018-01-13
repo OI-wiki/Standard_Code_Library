@@ -1,7 +1,7 @@
 /**
  * @author Ir1d(sirius.caffrey@gmail.com)
  * @Copyright SATA(The Star And Thank Author License)
- * http://www.codevs.cn/problem/1082/
+ * @Example http://www.codevs.cn/problem/1082/
  */
 
 #include <cstdio>// NOLINT
