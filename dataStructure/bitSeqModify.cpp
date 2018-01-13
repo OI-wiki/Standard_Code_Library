@@ -1,7 +1,7 @@
 /**
- * @author Ir1d(sirius.caffrey@gmail.com)
+ * @Author Ir1d(sirius.caffrey@gmail.com)
  * @Copyright SATA(The Star And Thank Author License)
- * http://www.codevs.cn/problem/1082/
+ * @Example http://www.codevs.cn/problem/1082/
  */
 
 #include <cstdio>// NOLINT
@@ -48,7 +48,6 @@ void update(LL *a, int x, int v) {
   }
 }
 int main() {
-
   scanf("%d", &n);
   g(i, 1, n) scanf("%lld", s + i), s[i] += s[i - 1];
   scanf("%d", &m);

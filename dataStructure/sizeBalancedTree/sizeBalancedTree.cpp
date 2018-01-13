@@ -1,9 +1,9 @@
 /**
- * @name Size_Balanced_Tree.cpp
+ * @name sizeBalancedTree.cpp
  * @subject Size Balanced Tree
  * @author KingsNeverDie(lm19990323@outlook.com)
  * @Copyright DWTFABG
- * @tests http://www.lydsy.com/JudgeOnline/problem.php?id=1503/
+ * @example http://www.lydsy.com/JudgeOnline/problem.php?id=1503/
  */
 
 #include <cstdio>

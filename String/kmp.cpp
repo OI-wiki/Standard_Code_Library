@@ -1,7 +1,7 @@
 /**
  * @Author SCaffrey(sirius.caffrey@gmail.com)
  * @Copyright SATA
- * http://hihocoder.com/problemset/problem/1015
+ * @Example http://hihocoder.com/problemset/problem/1015
  */
 #include <cstdio>// NOLINT
 #include <cstring>// NOLINT

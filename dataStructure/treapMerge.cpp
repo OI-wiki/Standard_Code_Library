@@ -1,7 +1,7 @@
 /**
  * @Author SCaffrey(sirius.caffrey@gmail.com)
  * @Copyright SATA
- * http://www.lydsy.com/JudgeOnline/problem.php?id=2733
+ * @Example http://www.lydsy.com/JudgeOnline/problem.php?id=2733
  */
 #include <cstdio>// NOLINT
 #include <cstring>// NOLINT

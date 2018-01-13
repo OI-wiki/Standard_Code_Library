@@ -1,8 +1,8 @@
 /**
- * @name ext_gcd.cpp
+ * @name extGcd.cpp
  * @subject extended_GCD algorithm
  * @author SCaffrey(sirius.caffrey@gmail.com)
- * @Copyright DWTFABG
+ * @Copyright SATA
  * @comment This is a extended_GCD algorithm.
  * @tests http://poj.org/problem?id=1061
  * @warning Added NOLINT on line 12 and 28 in order to ignore

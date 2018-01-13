@@ -4,7 +4,7 @@
  * @author SCaffrey(sirius.caffrey@gmail.com)
  * @Copyright SATA
  * @comment This is a sssp algorithm.
- * @tests http://hihocoder.com/problemset/problem/1081
+ * @example http://hihocoder.com/problemset/problem/1081
  * @warning using 0x1f to memset for inf
  */
 #include <cstdio>// NOLINT

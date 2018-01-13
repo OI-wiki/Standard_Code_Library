@@ -1,12 +1,11 @@
 /**
- * @Author SCaffrey(sirius.caffrey@gmail.com)
+ * @Author Ir1d (sirius.caffrey@gmail.com)
  * @Copyright SATA
- * @Example http://hihocoder.com/problemset/problem/1068
+ * @Example http://codevs.cn/problem/2741/
  */
 #include <cstdio>// NOLINT
 #include <cstring>// NOLINT
 #include <bits/stdc++.h>// NOLINT
-#include <algorithm>// NOLINT
 #include <cmath>// NOLINT
 #define x1 x11
 #define y1 y11
@@ -31,39 +30,35 @@ const double INF = 1e100;
 const int oo = ~0u >> 2;
 const double pi = acos(-1.0);
 const double EPS = 1e-8;
-const int MAXN = 1000033;
+const int MAXN = 100033;
 
-int n, m;
-int x, a, b;
-int s[MAXN];
-int p[MAXN];
-int mn[MAXN][20];
+int n;
+int pri[MAXN], cnt;
+bool vis[MAXN];
 void init() {
-  p[1] = 0;
   g(i, 2, n) {
-    p[i] = p[i - 1];
-    if ((1 << (p[i] + 1)) == i) ++p[i];
-  }
-  gd(i, n, 1) {
-    mn[i][0] = s[i];
-    for (int j = 1; (i + (1 << j) - 1) <= n; ++j) {
-      mn[i][j] = std::min(mn[i][j - 1], mn[i + (1 << (j - 1))][j - 1]);
+    if (!vis[i]) pri[cnt++] = i;
+    f(j, 0, cnt) {
+      if (i * pri[j] > n) break;
+      vis[i * pri[j]] = 1;
+      if (i % pri[j] == 0) break;
     }
   }
 }
-int solve(int ll, int rr) {
-  int len = rr - ll + 1;
-  int k = p[len];
-  return std::min(mn[ll][k], mn[rr - (1 << k) + 1][k]);
-}
 int main() {
+#ifdef LOCAL
+  freopen("a.in", "r", stdin);
+  freopen("a.out", "w", stdout);
+#endif
+
   scanf("%d", &n);
-  g(i, 1, n) scanf("%d", s + i);
   init();
-  scanf("%d", &m);
-  f(i, 0, m) {
-    scanf("%d%d", &a, &b);
-    if (a > b) std::swap(a, b);
-    printf("%d\n", solve(a, b));
-  }
+  f(i, 0, cnt) printf("%d ", pri[i]);
+
+#ifdef LOCAL
+  fclose(stdin);
+  fclose(stdout);
+#endif
+  return 0;
 }
+

@@ -1,10 +1,10 @@
 /**
- * @name quick_pow.cpp
- * @subject quick_pow algorithm
+ * @name quickPow.cpp
+ * @subject quickPow algorithm
  * @author SCaffrey(sirius.caffrey@gmail.com)
- * @Copyright DWTFABG
+ * @Copyright SATA
  * @comment This is an algorithm for powing quickly.
- * @tests https://vijos.org/p/1841 (NOIP2013 TG D1T1)
+ * @example https://vijos.org/p/1841 (NOIP2013 TG D1T1)
  * @warning Added NOLINT on line 23 to ignore long long stuff in cpplint.
  */
 

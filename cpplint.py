@@ -6305,6 +6305,7 @@ def main():
 
   file_log = open('files.log', 'w');
   sys.stderr = file_log
+  sys.argv = map(lambda arg: arg.decode(sys.stdout.encoding), sys.argv)
   filenames = ParseArguments(sys.argv[1:])
 
   # Change stderr to write with replacement characters so we don't die

@@ -1,7 +1,7 @@
 /**
- * @author SCaffrey (sirius.caffrey@gmail.com)
- * @copyright SATA(The Star And Thank Author License)
- * http://www.lydsy.com:808/JudgeOnline/problem.php?id=3531
+ * @Author SCaffrey (sirius.caffrey@gmail.com)
+ * @Copyright SATA(The Star And Thank Author License)
+ * @Example http://www.lydsy.com:808/JudgeOnline/problem.php?id=3531
  */
 
 #include <cstdio>// NOLINT

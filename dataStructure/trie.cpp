@@ -1,10 +1,11 @@
 /**
- * @Author SCaffrey(sirius.caffrey@gmail.com)
+ * @author SCaffrey (srius.caffrey@gmail.com)
  * @Copyright SATA(The Star And Thank Author License)
- * @Example http://poj.org/problem?id=3253
+ * @Example http://hihocoder.com/problemset/problem/1014
  */
 #include <cstdio>// NOLINT
 #include <cstring>// NOLINT
+#include <bits/stdc++.h>// NOLINT
 #include <cmath>// NOLINT
 #define x1 x11
 #define y1 y11
@@ -31,42 +32,26 @@ const double pi = acos(-1.0);
 const double EPS = 1e-8;
 const int MAXN = 100033;
 
-LL h[MAXN];
-int hs;
-void swim(int p) {
-  int q = p >> 1;
-  LL a = h[p];
-  while (q && a < h[q]) {
-    h[p] = h[q]; p = q; q = p >> 1;
+int n, m;
+char buf[100033];
+struct node {
+  int cnt;
+  node* ch[27];
+  inline node() {
+    cnt = 0; memset(ch, 0, sizeof ch);
   }
-  h[p] = a;
-}
-void sink(int p) {
-  int q = p << 1;
-  LL a = h[p];
-  while (q <= hs) {
-    if (q < hs && h[q + 1] < h[q]) ++q;
-    if (h[q] >= a) break;
-    h[p] = h[q]; p = q; q = p << 1;
+} *root;
+int get() {
+  node* tee = root;
+  f(j, 0, strlen(buf)) {
+    if (tee->ch[ buf[j] - 'a' ] == NULL) {
+      return 0;
+      // tee->ch[ buf[j] - 'a' ] = new node();
+    }
+    tee = tee->ch[ buf[j] - 'a' ];
   }
-  h[p] = a;
+  return tee->cnt;
 }
-void insert(LL a) {
-  h[++hs] = a; swim(hs);
-}
-LL getMin() {
-  LL r = h[1]; h[1] = h[hs--];
-  sink(1);
-  return r;
-}
-void build() {
-  fd(i, hs / 2, 0) sink(i);
-}
-void decreaseKey(int p, LL a) {
-  h[p] = a; swim(p);
-}
-int n;
-LL ans = 0, tee;
 int main() {
 #ifdef LOCAL
   freopen("a.in", "r", stdin);
@@ -74,16 +59,22 @@ int main() {
 #endif
 
   scanf("%d", &n);
-  g(i, 1, n) scanf("%lld", h + i);
-  hs = n;
-  build();
-  f(i, 1, n) {
-    tee = getMin();
-    tee += getMin();
-    insert(tee);
-    ans += tee;
+  root = new node();
+  f(i, 0, n) {
+    scanf("%s", buf);
+    node* tee = root;
+    f(j, 0, strlen(buf)) {
+      if (tee->ch[ buf[j] - 'a' ] == NULL) {
+        tee->ch[ buf[j] - 'a' ] = new node();
+      }
+      tee = tee->ch[ buf[j] - 'a' ]; ++tee->cnt;
+    }
   }
-  printf("%lld\n", ans);
+  scanf("%d", &m);
+  f(i, 0, m) {
+    scanf("%s", buf);
+    printf("%d\n", get());
+  }
 
 #ifdef LOCAL
   fclose(stdin);

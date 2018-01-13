@@ -1,10 +1,10 @@
 /**
- * @name euler_primelist_generating.cpp
- * @subject euler_primelist
+ * @name eulerPrimelistGenerating.cpp
+ * @subject eulerPrimelist
  * @author CJSoft (egwcyh@qq.com)
  * @Copyright DWTFABG
  * @comment returns a vector containing primes from 2 to upperBound
- * @tests http://codevs.cn/problem/2741/
+ * @example http://codevs.cn/problem/2741/
  */
 
 /**
