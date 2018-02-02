@@ -47,7 +47,7 @@ inline LL get(LL a, LL b, LL c) {
 }
 void solve(LL a, LL b, LL c) {
   // L = i * M - j; i from [1 .. M], j from [1 .. M]
-  LL m  = ceil(sqrt(double(c))), s, x; // s = a ** m
+  LL m  = ceil(sqrt(c + .5)), s, x;  // s = a ** m NOLINT
   b %= c;
   if (b == 0) {
     puts("no solution");

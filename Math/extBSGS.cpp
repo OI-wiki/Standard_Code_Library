@@ -86,7 +86,7 @@ void solve(LL a, LL b, LL c) {
     }
   }
   // M.clear();
-  LL m  = ceil(sqrt(c + .5)); // s = a ** m
+  LL m  = ceil(sqrt(c + .5));  // s = a ** m
   s = get(a, m, c);
   // M[b] = 0;
   g(j, 1, m) {
