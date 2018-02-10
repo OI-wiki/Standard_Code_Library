@@ -44,12 +44,12 @@ LL exp(int a, int b, LL mod) {
   }
   return ans;
 }
-int calcu(int p, int &x, int &y) {
+int calcu(int p, int &x, int &y) { // NOLINT
   if (p % 4 != 1) return -1;
   expp = (p - 1) / 4;
   int A, B, aa;
   while (1) {
-    aa = rand() % p;
+    aa = rand() % p; // NOLINT
     if (aa == 0) continue;
     A = exp(aa, expp, p);
     ans = (((LL)A % p) * ((LL)A % p)) % p;

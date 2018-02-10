@@ -57,7 +57,7 @@ void gauss(int n) {
       }
     }
     if (fabs(a[i][i]) < EPS) continue;
-    f(j, 0, n) 
+    f(j, 0, n)
       if (i != j && fabs(a[j][i]) > EPS) {
         double det = a[j][i] / a[i][i];
         g(k, i, n) a[j][k] -= a[i][k] * det;
