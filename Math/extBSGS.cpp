@@ -1,7 +1,7 @@
 /**
  * @Author Ir1d(sirius.caffrey@gmail.com)
  * @Copyright SATA
- * @Example 
+ * @Example http://poj.org/problem?id=3243
  */
 #include <cstdio>// NOLINT
 #include <cstring>// NOLINT

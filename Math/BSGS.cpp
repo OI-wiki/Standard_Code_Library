@@ -1,7 +1,7 @@
 /**
  * @Author Ir1d(sirius.caffrey@gmail.com)
  * @Copyright SATA
- * @Example 
+ * @Example http://poj.org/problem?id=2417
  */
 #pragma GCC optimize("O2")
 #include <cstdio>// NOLINT
