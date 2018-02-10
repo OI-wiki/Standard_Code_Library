@@ -2,6 +2,7 @@
  * @Author Ir1d(sirius.caffrey@gmail.com)
  * @Copyright SATA
  * @Example https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&category=17&page=show_problem&problem=1486
+ * http://www.bnuoj.com/v3/problem_show.php?pid=9661
  */
 #include <cstdio>// NOLINT
 #include <cstring>// NOLINT
