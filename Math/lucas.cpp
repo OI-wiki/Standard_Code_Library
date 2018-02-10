@@ -2,7 +2,7 @@
  * @Author Ir1d (sirius.caffrey@gmail.com)
  * @Copyright SATA
  * @Example http://www.lydsy.com:808/JudgeOnline/problem.php?id=2111
- * @Notes 
+ * @Notes Lucas's theorem
  */
 #include <cstdio>// NOLINT
 #include <cstring>// NOLINT
