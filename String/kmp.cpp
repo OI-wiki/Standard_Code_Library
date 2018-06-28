@@ -39,7 +39,7 @@ int n, m, ans;
 void get() {
   d[0] = d[1] = 0;
   int j = 0;
-  f(i, 1, n) {
+  f(i, 1, m) {
     j = d[i];
     while (j && p[i] != p[j]) j = d[j];
     if (p[i] == p[j]) {
