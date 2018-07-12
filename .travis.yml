@@ -3,6 +3,8 @@ language: node_js
 node_js: stable
 
 script:
+  - git config clangFormat.binary node_modules/.bin/clang-format
+  - git config clangFormat.style file
   - npm install .
   - npm run lint
 
