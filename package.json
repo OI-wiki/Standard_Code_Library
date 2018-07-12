@@ -4,8 +4,8 @@
   "description": "standard_code_library",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier \"**/*.{js,json,md}\" --write && git-clang-format",
+    "lint": "check-clang-format && prettier-check \"**/*.{js,json,md}\"",
+    "format": "prettier \"**/*.{js,json,md}\" --write && clang-format ./test.cpp -style=Google -i",
     "precommit": "check-clang-format && prettier-check \"**/*.{js,json,md}\""
   },
   "repository": {
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/Ir1d/Standard_Code_Library#readme",
   "dependencies": {
-    "clang-format": "^1.2.3"
+    "clang-format": "^1.2.3",
+    "prettier-check": "^2.0.0"
   }
 }

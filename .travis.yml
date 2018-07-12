@@ -1,7 +1,11 @@
-language: cpp
-compiler:
-  - gcc
+language: node_js
+
+node_js: stable
+
 script:
-  - g++ test.cpp -o tee
-  - ./tee
-  - cat files.log
+  - npm install .
+  - npm run lint
+
+cache:
+  directories:
+    - node_modules
