@@ -5,8 +5,13 @@
   "main": "index.js",
   "scripts": {
     "lint": "check-clang-format && prettier-check \"**/*.{js,json,md}\"",
-    "format": "prettier \"**/*.{js,json,md}\" --write && clang-format ./test.cpp -style=Google -i",
-    "precommit": "check-clang-format && prettier-check \"**/*.{js,json,md}\""
+    "format": "prettier \"**/*.{js,json,md}\" --write && clang-format ./test.cpp -style=Google -i"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm run lint"
+    }
   },
   "repository": {
     "type": "git",
@@ -25,5 +30,8 @@
     "clang-format": "^1.2.3",
     "prettier": "^1.13.7",
     "prettier-check": "^2.0.0"
+  },
+  "devDependencies": {
+    "husky": "^1.0.0-rc.13"
   }
 }
