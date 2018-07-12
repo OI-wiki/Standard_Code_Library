@@ -20,7 +20,8 @@ int a, b, c;
 int gcd(int a, int b) {
   while (b) {
     c = a % b;
-    a = b; b = c;
+    a = b;
+    b = c;
   }
   return a;
 }

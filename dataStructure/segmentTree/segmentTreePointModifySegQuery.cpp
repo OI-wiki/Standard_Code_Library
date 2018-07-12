@@ -7,8 +7,8 @@
  * @tests http://acm.hdu.edu.cn/showproblem.php?pid=1166
  */
 
-#include <cstdio>
 #include <cmath>
+#include <cstdio>
 
 #define g(x, y, z) for (int x = (y), __ = (z); x <= __; ++x)
 
@@ -21,7 +21,7 @@ int x, y;
  * 'struct node'
  * Each node represents one in the seg_tree
  */
-struct node{
+struct node {
   int l, r, md;
   int sum;
   node *ls, *rs;
@@ -30,8 +30,10 @@ struct node{
    * @param  ll [int]
    * @param  rr [int]
    */
-  inline node(int ll = 0, int rr = 0):l(ll), r(rr),// NOLINT
-      md(ll + (rr - ll >> 1)) {
+  inline node(int ll = 0, int rr = 0)
+      : l(ll),
+        r(rr),  // NOLINT
+        md(ll + (rr - ll >> 1)) {
     if (ll == rr) {
       scanf("%d", &sum);
       ls = rs = NULL;
@@ -68,8 +70,8 @@ struct node{
     if (ll == l && rr == r) {
       return sum;
     }
-    if (ll > md)return rs->query(ll, rr);
-    if (rr <= md)return ls->query(ll, rr);
+    if (ll > md) return rs->query(ll, rr);
+    if (rr <= md) return ls->query(ll, rr);
     return ls->query(ll, md) + rs->query(md + 1, rr);
   }
 };
@@ -81,7 +83,7 @@ int main() {
     node* root = new node(1, n);
     printf("Case %d:\n", i);
     while (~scanf("%s", buf)) {
-      if (buf[0] == 'E')break;
+      if (buf[0] == 'E') break;
       scanf("%d%d", &x, &y);
       if (buf[0] == 'A') {
         root->add(x, y);

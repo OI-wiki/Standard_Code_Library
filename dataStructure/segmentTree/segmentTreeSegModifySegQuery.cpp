@@ -7,12 +7,12 @@
  * @tests http://acm.hdu.edu.cn/showproblem.php?pid=1698
  */
 
-#include <cstdio>
 #include <cmath>
+#include <cstdio>
 
 #define g(x, y, z) for (int x = (y), __ = (z); x <= __; ++x)
 
-typedef long long LL;// NOLINT
+typedef long long LL;  // NOLINT
 
 int n, q;
 char buf[12];
@@ -22,7 +22,7 @@ int a, b, c;
  * 'struct node'
  * Each node represents one in the seg_tree
  */
-struct node{
+struct node {
   int l, r, md;
   node *ls, *rs;
   LL cover;
@@ -32,8 +32,10 @@ struct node{
    * @param  ll [int]
    * @param  rr [int]
    */
-  inline node(int ll = 0,int rr = 0):l(ll), r(rr),// NOLINT
-      md(ll + (rr - ll >> 1)) {
+  inline node(int ll = 0, int rr = 0)
+      : l(ll),
+        r(rr),  // NOLINT
+        md(ll + (rr - ll >> 1)) {
     cover = 0;
     if (l == r) {
       ls = rs = NULL;
@@ -75,7 +77,8 @@ struct node{
     } else if (ll > md) {
       rs->add(ll, rr, val);
     } else {
-      ls->add(ll, md, val); rs->add(md + 1, rr, val);
+      ls->add(ll, md, val);
+      rs->add(md + 1, rr, val);
     }
     sum = ls->sum + rs->sum;
   }
@@ -90,8 +93,8 @@ struct node{
       return sum;
     }
     pushdown();
-    if (ll > md)return rs->query(ll, rr);
-    if (rr <= md)return ls->query(ll, rr);
+    if (ll > md) return rs->query(ll, rr);
+    if (rr <= md) return ls->query(ll, rr);
     return ls->query(ll, md) + rs->query(md + 1, rr);
   }
 };

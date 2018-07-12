@@ -3,14 +3,15 @@
  * @subject primeValidating algorithm
  * @author SCaffrey (sirius.caffrey@gmail.com)
  * @Copyright SATA
- * @comment These are prime_validating algorithms, including brutal and Miler_Rabin.
+ * @comment These are prime_validating algorithms, including brutal and
+ * Miler_Rabin.
  * @example http://www.51nod.com/onlineJudge/questionCode.html#!problemId=1106
  */
 
+#include <cmath>
 #include <cstdio>
 #include <cstdlib>
 #include <ctime>
-#include <cmath>
 
 #define g(x, y, z) for (int x = (y), __ = (z); x <= __; ++x)
 
@@ -27,12 +28,12 @@ bool check_brutal(int t) {
   return 1;
 }
 
-typedef long long LL;// NOLINT
+typedef long long LL;  // NOLINT
 
 int pow(int a, int b, int c) {
   int res = 1, bas = a;
   while (b) {
-    if (b & 1)res = (LL)res * bas % c;
+    if (b & 1) res = (LL)res * bas % c;
     // Transform to long long in case of overflow.
     bas = bas * bas % c;
     b >>= 1;

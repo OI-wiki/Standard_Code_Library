@@ -10,7 +10,7 @@
  */
 #include <cstdio>
 
-typedef long long LL;// NOLINT 
+typedef long long LL;  // NOLINT
 
 LL x, y, m, n, L;
 // Using variables the same as the problem statement.
@@ -26,7 +26,7 @@ LL a, b, c, d, xx, yy;
  * @comment this function solves things like 'a * xx + b * yy = gcd(a,b)'
  *              and returns gcd(a,b);
  */
-LL ext_gcd(LL a, LL b, LL &xx, LL &yy) {// NOLINT 
+LL ext_gcd(LL a, LL b, LL &xx, LL &yy) {  // NOLINT
   if (b) {
     c = ext_gcd(b, a % b, yy, xx);
     yy -= xx * (a / b);
@@ -37,7 +37,8 @@ LL ext_gcd(LL a, LL b, LL &xx, LL &yy) {// NOLINT
     //     is 'a div b'.
     return c;
   }
-  xx = 1; yy = 0;
+  xx = 1;
+  yy = 0;
   return a;
 }
 

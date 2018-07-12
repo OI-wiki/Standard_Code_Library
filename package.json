@@ -4,7 +4,9 @@
   "description": "standard_code_library",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier \"**/*.{js,json,md}\" --write && git-clang-format",
+    "precommit": "check-clang-format && prettier-check \"**/*.{js,json,md}\""
   },
   "repository": {
     "type": "git",

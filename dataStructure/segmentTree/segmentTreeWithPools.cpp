@@ -7,9 +7,9 @@
  * @tests http://acm.hdu.edu.cn/showproblem.php?pid=1754
  */
 
-#include <cstdio>
-#include <cmath>
 #include <algorithm>
+#include <cmath>
+#include <cstdio>
 
 #define g(x, y, z) for (int x = (y), __ = (z); x <= __; ++x)
 
@@ -37,8 +37,8 @@ struct node {
     if (ll == l && rr == r) {
       return mx;
     }
-    if (ll > md)return rs->query(ll, rr);
-    if (rr <= md)return ls->query(ll, rr);
+    if (ll > md) return rs->query(ll, rr);
+    if (rr <= md) return ls->query(ll, rr);
     return std::max(ls->query(ll, md), rs->query(md + 1, rr));
   }
   /**
@@ -59,8 +59,8 @@ struct node {
     mx = std::max(ls->mx, rs->mx);
   }
   inline void remove() {
-    if (ls)ls->remove();
-    if (rs)rs->remove();
+    if (ls) ls->remove();
+    if (rs) rs->remove();
     delete this;
   }
 } pool[MAXNODE], *tail;
@@ -73,7 +73,9 @@ struct node {
  */
 inline node* newnode(int ll, int rr) {
   node* ans = tail++;
-  ans->l = ll; ans->r = rr; ans->md = ll + (rr - ll >> 1);
+  ans->l = ll;
+  ans->r = rr;
+  ans->md = ll + (rr - ll >> 1);
   if (ll == rr) {
     scanf("%d", &(ans->mx));
     ans->ls = ans->rs = NULL;
