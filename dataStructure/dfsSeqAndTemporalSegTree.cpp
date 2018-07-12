@@ -4,10 +4,10 @@
  * @Example http://www.lydsy.com:808/JudgeOnline/problem.php?id=3531
  */
 
-#include <cstdio>// NOLINT
-#include <cstring>// NOLINT
-#include <algorithm>// NOLINT
-#include <cmath>// NOLINT
+#include <algorithm>  // NOLINT
+#include <cmath>      // NOLINT
+#include <cstdio>     // NOLINT
+#include <cstring>    // NOLINT
 #define x1 x11
 #define y1 y11
 
@@ -17,14 +17,14 @@
 #define gd(x, y, z) for (int x = (y), __ = (z); x >= __; --x)
 
 #ifdef WIN32
-  #define LLD "%I64d"
-  #define LLU "%I64u"
+#define LLD "%I64d"
+#define LLU "%I64u"
 #else
-  #define LLD "%lld"
-  #define LLU "%llu"
+#define LLD "%lld"
+#define LLU "%llu"
 #endif
 
-typedef long long LL;// NOLINT
+typedef long long LL;  // NOLINT
 typedef long double real;
 
 const double INF = 1e100;
@@ -33,7 +33,7 @@ const double pi = acos(-1.0);
 const double EPS = 1e-8;
 const int MAXN = 100033;
 
-inline void read(int &x) {// NOLINT
+inline void read(int &x) {  // NOLINT
   char c = getchar();
   int f = 1;
   while (c < '0' || c > '9') {
@@ -56,13 +56,16 @@ struct edge {
 } e[MAXN << 3];
 int head[MAXN], cnt = 1;
 inline void add(int s, int t) {
-  e[++cnt].t = t; e[cnt].x = head[s]; head[s] = cnt;
+  e[++cnt].t = t;
+  e[cnt].x = head[s];
+  head[s] = cnt;
 }
 void dfs1(int x) {
-  vis[x] = 1; sz[x] = 1;
+  vis[x] = 1;
+  sz[x] = 1;
   g(i, 1, 16) {
     if (dep[x] < (1 << i)) break;
-    fa[x][i] = fa[ fa[x][i - 1] ][i - 1];
+    fa[x][i] = fa[fa[x][i - 1]][i - 1];
   }
   for (int i = head[x]; i; i = e[i].x) {
     if (vis[e[i].t]) continue;
@@ -73,7 +76,8 @@ void dfs1(int x) {
   }
 }
 void dfs2(int x, int chain) {
-  pos[x] = ++idx; belong[x] = chain;
+  pos[x] = ++idx;
+  belong[x] = chain;
   int k = 0;
   for (int i = head[x]; i; i = e[i].x) {
     if (dep[e[i].t] > dep[x] && sz[e[i].t] > sz[k]) k = e[i].t;
@@ -89,7 +93,8 @@ int lca(int x, int y) {
   int t = dep[x] - dep[y];
   g(i, 0, 16) if (t & (1 << i)) x = fa[x][i];
   gd(i, 16, 0) if (fa[x][i] != fa[y][i]) {
-    x = fa[x][i]; y = fa[y][i];
+    x = fa[x][i];
+    y = fa[y][i];
   }
   if (x == y) return x;
   return fa[x][0];
@@ -130,7 +135,7 @@ struct node {
     if (rr <= md) return ls->getMax(l, md, ll, rr);
     if (ll > md) return rs->getMax(md + 1, r, ll, rr);
     return std::max(ls->getMax(l, md, ll, md),
-     rs->getMax(md + 1, r, md + 1, rr));
+                    rs->getMax(md + 1, r, md + 1, rr));
   }
   int getSum(int l, int r, int ll, int rr) {
     if (ll == l && rr == r) return sum;
@@ -146,8 +151,8 @@ node *root[MAXN];
 int solveMax(int c, int x, int f) {
   int mx = 0;
   while (belong[x] != belong[f]) {
-    mx = std::max(mx, root[c]->getMax(1, n, pos[ belong[x] ], pos[x]));
-    x = fa[ belong[x] ][0];
+    mx = std::max(mx, root[c]->getMax(1, n, pos[belong[x]], pos[x]));
+    x = fa[belong[x]][0];
   }
   mx = std::max(mx, root[c]->getMax(1, n, pos[f], pos[x]));
   return mx;
@@ -155,8 +160,8 @@ int solveMax(int c, int x, int f) {
 int solveSum(int c, int x, int f) {
   int sum = 0;
   while (belong[x] != belong[f]) {
-    sum += root[c]->getSum(1, n, pos[ belong[x] ], pos[x]);
-    x = fa[ belong[x] ][0];
+    sum += root[c]->getSum(1, n, pos[belong[x]], pos[x]);
+    x = fa[belong[x]][0];
   }
   sum += root[c]->getSum(1, n, pos[f], pos[x]);
   return sum;
@@ -170,27 +175,33 @@ int main() {
   freopen("a.out", "w", stdout);
 #endif
 
-  read(n); read(m);
+  read(n);
+  read(m);
   g(i, 1, n) {
-    read(w[i]); read(c[i]);
+    read(w[i]);
+    read(c[i]);
   }
   g(i, 1, 100000) root[i] = new node();
   f(i, 1, n) {
-    read(u); read(v);
-    add(u, v); add(v, u);
+    read(u);
+    read(v);
+    add(u, v);
+    add(v, u);
   }
-  dfs1(1); dfs2(1, 1);
-  g(i, 1, n) root[ c[i] ]->update(1, n, pos[i], w[i]);
+  dfs1(1);
+  dfs2(1, 1);
+  g(i, 1, n) root[c[i]]->update(1, n, pos[i], w[i]);
   g(i, 1, m) {
     scanf("%s", s);
-    read(x); read(y);
+    read(x);
+    read(y);
     if (s[0] == 'C') {
       if (s[1] == 'C') {
-        root[ c[x] ]->update(1, n, pos[x], 0);
+        root[c[x]]->update(1, n, pos[x], 0);
         c[x] = y;
         root[y]->update(1, n, pos[x], w[x]);
       } else {
-        root[ c[x] ]->update(1, n, pos[x], y);
+        root[c[x]]->update(1, n, pos[x], y);
         w[x] = y;
       }
     } else {
@@ -211,4 +222,3 @@ int main() {
 #endif
   return 0;
 }
-

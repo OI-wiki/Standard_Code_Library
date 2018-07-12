@@ -3,9 +3,9 @@
  * @Copyright SATA
  * @Example http://poj.org/problem?id=1509
  */
-#include <cstdio>// NOLINT
-#include <cstring>// NOLINT
-#include <cmath>// NOLINT
+#include <cmath>    // NOLINT
+#include <cstdio>   // NOLINT
+#include <cstring>  // NOLINT
 #define x1 x11
 #define y1 y11
 
@@ -15,14 +15,14 @@
 #define gd(x, y, z) for (int x = (y), __ = (z); x >= __; --x)
 
 #ifdef WIN32
-  #define LLD "%I64d"
-  #define LLU "%I64u"
+#define LLD "%I64d"
+#define LLU "%I64u"
 #else
-  #define LLD "%lld"
-  #define LLU "%llu"
+#define LLD "%lld"
+#define LLU "%llu"
 #endif
 
-typedef long long LL;// NOLINT
+typedef long long LL;  // NOLINT
 typedef long double real;
 
 const double INF = 1e100;
@@ -41,8 +41,10 @@ int minRep() {
       k++;
       continue;
     }
-    if (t > 0) i += k + 1;
-    else j += k + 1; //NOLINT
+    if (t > 0)
+      i += k + 1;
+    else
+      j += k + 1;  // NOLINT
     if (i == j) ++j;
     k = 0;
   }
@@ -60,8 +62,8 @@ int main() {
   f(i, 0, T) {
     scanf("%s", ss);
     n = strlen(ss);
-    strcpy(s, ss); //NOLINT
-    strcpy(s + n, ss); //NOLINT
+    strcpy(s, ss);      // NOLINT
+    strcpy(s + n, ss);  // NOLINT
     n <<= 1;
     printf("%d\n", minRep() + 1);
   }
@@ -72,5 +74,3 @@ int main() {
 #endif
   return 0;
 }
-
-

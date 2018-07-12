@@ -3,11 +3,11 @@
  * @Copyright SATA
  * @Example http://www.lydsy.com/JudgeOnline/problemset.php?search=1834
  */
-#include <cstdio>// NOLINT
-#include <cstring>// NOLINT
-#include <queue>// NOLINT
-#include <algorithm>// NOLINT
-#include <cmath>// NOLINT
+#include <algorithm>  // NOLINT
+#include <cmath>      // NOLINT
+#include <cstdio>     // NOLINT
+#include <cstring>    // NOLINT
+#include <queue>      // NOLINT
 #define x1 x11
 #define y1 y11
 
@@ -17,14 +17,14 @@
 #define gd(x, y, z) for (int x = (y), __ = (z); x >= __; --x)
 
 #ifdef WIN32
-  #define LLD "%I64d"
-  #define LLU "%I64u"
+#define LLD "%I64d"
+#define LLU "%I64u"
 #else
-  #define LLD "%lld"
-  #define LLU "%llu"
+#define LLD "%lld"
+#define LLU "%llu"
 #endif
 
-typedef long long LL;// NOLINT
+typedef long long LL;  // NOLINT
 typedef long double real;
 
 const double INF = 1e100;
@@ -41,12 +41,32 @@ struct node {
 } e[MAXN];
 int head[MAXN], cnt = 1;
 inline void add(int s, int t, int w, int c) {
-  e[++cnt].s = s; e[cnt].t = t; e[cnt].w = w; e[cnt].q = c; e[cnt].x = head[s]; head[s] = cnt;// NOLINT
-  e[++cnt].s = t; e[cnt].t = s; e[cnt].w = 0; e[cnt].q = -c; e[cnt].x = head[t]; head[t] = cnt;// NOLINT
+  e[++cnt].s = s;
+  e[cnt].t = t;
+  e[cnt].w = w;
+  e[cnt].q = c;
+  e[cnt].x = head[s];
+  head[s] = cnt;  // NOLINT
+  e[++cnt].s = t;
+  e[cnt].t = s;
+  e[cnt].w = 0;
+  e[cnt].q = -c;
+  e[cnt].x = head[t];
+  head[t] = cnt;  // NOLINT
 }
 inline void add2(int s, int t, int w, int c) {
-  e[++cnt].s = s; e[cnt].t = t; e[cnt].w = w; e[cnt].c = c; e[cnt].x = head[s]; head[s] = cnt;// NOLINT
-  e[++cnt].s = t; e[cnt].t = s; e[cnt].w = 0; e[cnt].c = -c; e[cnt].x = head[t]; head[t] = cnt;// NOLINT
+  e[++cnt].s = s;
+  e[cnt].t = t;
+  e[cnt].w = w;
+  e[cnt].c = c;
+  e[cnt].x = head[s];
+  head[s] = cnt;  // NOLINT
+  e[++cnt].s = t;
+  e[cnt].t = s;
+  e[cnt].w = 0;
+  e[cnt].c = -c;
+  e[cnt].x = head[t];
+  head[t] = cnt;  // NOLINT
 }
 void upd() {
   int t = cnt;
@@ -58,9 +78,11 @@ bool bfs() {
   memset(dis, -1, sizeof dis);
   while (!Q.empty()) Q.pop();
   int u;
-  Q.push(S); dis[S] = 0;
+  Q.push(S);
+  dis[S] = 0;
   while (!Q.empty()) {
-    u = Q.front(); Q.pop();
+    u = Q.front();
+    Q.pop();
     for (int i = head[u]; i; i = e[i].x) {
       if (e[i].w && dis[e[i].t] == -1) {
         dis[e[i].t] = dis[u] + 1;
@@ -76,7 +98,9 @@ int dfs(int x, int fl) {
   for (int i = head[x]; i; i = e[i].x) {
     if (e[i].w && dis[e[i].t] == dis[x] + 1) {
       w = dfs(e[i].t, std::min(e[i].w, fl - used));
-      e[i].w -= w; e[i ^ 1].w += w; used += w;
+      e[i].w -= w;
+      e[i ^ 1].w += w;
+      used += w;
       if (used == fl) return fl;
     }
   }
@@ -91,13 +115,16 @@ int a[MAXN], pre[MAXN];
 bool spfa() {
   memset(dis, 0x1f, sizeof dis);
   memset(inq, 0, sizeof inq);
-  int mx = dis[0]; a[0] = mx;
+  int mx = dis[0];
+  a[0] = mx;
   dis[0] = 0;
   while (!Q.empty()) Q.pop();
-  Q.push(0); inq[0] = 1;
+  Q.push(0);
+  inq[0] = 1;
   int u;
   while (!Q.empty()) {
-    u = Q.front(); Q.pop();
+    u = Q.front();
+    Q.pop();
     for (int i = head[u]; i; i = e[i].x) {
       if (e[i].w && dis[e[i].t] > dis[u] + e[i].c) {
         dis[e[i].t] = dis[u] + e[i].c;
@@ -117,9 +144,9 @@ void mcf() {
   ans += dis[n] * a[n];
   int u = n;
   while (u) {
-    e[ pre[u] ].w -= a[n];
-    e[ pre[u] ^ 1 ].w += a[n];
-    u = e[ pre[u] ].s;
+    e[pre[u]].w -= a[n];
+    e[pre[u] ^ 1].w += a[n];
+    u = e[pre[u]].s;
   }
 }
 int u, v, w, c;
@@ -129,7 +156,8 @@ int main() {
     scanf("%d%d%d%d", &u, &v, &w, &c);
     add(u, v, w, c);
   }
-  S = 1; T = n;
+  S = 1;
+  T = n;
   dinic();
   printf("%d ", ans);
   ans = 0;

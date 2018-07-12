@@ -4,10 +4,10 @@
  * @Example http://poj.org/problem?id=2417
  */
 #pragma GCC optimize("O2")
-#include <cstdio>// NOLINT
-#include <cstring>// NOLINT
-#include <map>// NOLINT
-#include <cmath>// NOLINT
+#include <cmath>    // NOLINT
+#include <cstdio>   // NOLINT
+#include <cstring>  // NOLINT
+#include <map>      // NOLINT
 #define x1 x11
 #define y1 y11
 
@@ -17,14 +17,14 @@
 #define gd(x, y, z) for (int x = (y), __ = (z); x >= __; --x)
 
 #ifdef WIN32
-  #define LLD "%I64d"
-  #define LLU "%I64u"
+#define LLD "%I64d"
+#define LLU "%I64u"
 #else
-  #define LLD "%lld"
-  #define LLU "%llu"
+#define LLD "%lld"
+#define LLU "%llu"
 #endif
 
-typedef long long LL;// NOLINT
+typedef long long LL;  // NOLINT
 typedef long double real;
 
 const double INF = 1e100;
@@ -47,7 +47,7 @@ inline LL get(LL a, LL b, LL c) {
 }
 void solve(LL a, LL b, LL c) {
   // L = i * M - j; i from [1 .. M], j from [1 .. M]
-  LL m  = ceil(sqrt(c + .5)), s, x;  // s = a ** m NOLINT
+  LL m = ceil(sqrt(c + .5)), s, x;  // s = a ** m NOLINT
   b %= c;
   if (b == 0) {
     puts("no solution");
@@ -65,9 +65,9 @@ void solve(LL a, LL b, LL c) {
   g(i, 1, m) {
     x = x * s % c;
     if (M[x]) {
-    // if (M.find(x) != M.end()) {
+      // if (M.find(x) != M.end()) {
       // printf("%d %d %d\n", i, M[x], m);
-      printf(LLD"\n", (i * m - M[x] + c) % c);
+      printf(LLD "\n", (i * m - M[x] + c) % c);
       return;
     }
   }
@@ -89,4 +89,3 @@ int main() {
 #endif
   return 0;
 }
-

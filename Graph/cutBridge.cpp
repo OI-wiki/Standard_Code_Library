@@ -3,12 +3,12 @@
  * @Copyright SATA
  * @Example http://hihocoder.com/problemset/problem/1183
  */
-#include <cstdio>// NOLINT
-#include <cstring>// NOLINT
-#include <bits/stdc++.h>// NOLINT
-#include <utility>// NOLINT
-#include <set>// NOLINT
-#include <cmath>// NOLINT
+#include <bits/stdc++.h>  // NOLINT
+#include <cmath>          // NOLINT
+#include <cstdio>         // NOLINT
+#include <cstring>        // NOLINT
+#include <set>            // NOLINT
+#include <utility>        // NOLINT
 #define x1 x11
 #define y1 y11
 
@@ -18,14 +18,14 @@
 #define gd(x, y, z) for (int x = (y), __ = (z); x >= __; --x)
 
 #ifdef WIN32
-  #define LLD "%I64d"
-  #define LLU "%I64u"
+#define LLD "%I64d"
+#define LLU "%I64u"
 #else
-  #define LLD "%lld"
-  #define LLU "%llu"
+#define LLD "%lld"
+#define LLU "%llu"
 #endif
 
-typedef long long LL;// NOLINT
+typedef long long LL;  // NOLINT
 typedef long double real;
 
 const double INF = 1e100;
@@ -39,8 +39,14 @@ struct edge {
 } e[MAXN << 1];
 int head[MAXN], cnt = 1;
 inline void add(int s, int t) {
-  e[++cnt].t = t; e[cnt].x = head[s]; head[s] = cnt; e[cnt].s = s;
-  e[++cnt].t = s; e[cnt].x = head[t]; head[t] = cnt; e[cnt].s = t;
+  e[++cnt].t = t;
+  e[cnt].x = head[s];
+  head[s] = cnt;
+  e[cnt].s = s;
+  e[++cnt].t = s;
+  e[cnt].x = head[t];
+  head[t] = cnt;
+  e[cnt].s = t;
 }
 int low[MAXN], dfn[MAXN], idx;
 int cut[MAXN], bri[MAXN];
@@ -73,7 +79,8 @@ int u, v;
 bool c;
 int vis[MAXN];
 void get(int u, int fa, int dep, int n) {
-  vis[u] = 1; dfn[u] = low[u] = dep;
+  vis[u] = 1;
+  dfn[u] = low[u] = dep;
   int ch = 0;
   for (int i = head[u]; i; i = e[i].x) {
     if (e[i].t != fa && vis[e[i].t] == 1) {
@@ -111,7 +118,7 @@ int main() {
   }
   if (c) {
     puts("");
-  }  else {
+  } else {
     puts("Null");
   }
   for (std::set<PII>::iterator it = S.begin(); it != S.end(); ++it) {

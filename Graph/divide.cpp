@@ -3,10 +3,10 @@
  * @Copyright SATA
  * @Example http://poj.org/problem?id=1741
  */
-#include <cstdio>// NOLINT
-#include <cstring>// NOLINT
-#include <algorithm>// NOLINT
-#include <cmath>// NOLINT
+#include <algorithm>  // NOLINT
+#include <cmath>      // NOLINT
+#include <cstdio>     // NOLINT
+#include <cstring>    // NOLINT
 #define x1 x11
 #define y1 y11
 
@@ -16,14 +16,14 @@
 #define gd(x, y, z) for (int x = (y), __ = (z); x >= __; --x)
 
 #ifdef WIN32
-  #define LLD "%I64d"
-  #define LLU "%I64u"
+#define LLD "%I64d"
+#define LLU "%I64u"
 #else
-  #define LLD "%lld"
-  #define LLU "%llu"
+#define LLD "%lld"
+#define LLU "%llu"
 #endif
 
-typedef long long LL;// NOLINT
+typedef long long LL;  // NOLINT
 typedef long double real;
 
 const double INF = 1e100;
@@ -41,11 +41,18 @@ struct node {
 } e[MAXN << 1];
 int head[MAXN], cnt = 1;
 inline void add(int s, int t, int w) {
-  e[++cnt].t = t; e[cnt].w = w; e[cnt].x = head[s]; head[s] = cnt;
-  e[++cnt].t = s; e[cnt].w = w; e[cnt].x = head[t]; head[t] = cnt;
+  e[++cnt].t = t;
+  e[cnt].w = w;
+  e[cnt].x = head[s];
+  head[s] = cnt;
+  e[++cnt].t = s;
+  e[cnt].w = w;
+  e[cnt].x = head[t];
+  head[t] = cnt;
 }
 void getRoot(int x, int fa) {
-  sz[x] = 1; f[x] = 0;
+  sz[x] = 1;
+  f[x] = 0;
   for (int i = head[x]; i; i = e[i].x) {
     if (e[i].t == fa || vis[e[i].t]) continue;
     getRoot(e[i].t, x);
@@ -64,13 +71,15 @@ void getDep(int x, int fa) {
   }
 }
 int calc(int x, int now) {
-  d[x] = now; dep[0] = 0;
+  d[x] = now;
+  dep[0] = 0;
   getDep(x, 0);
   std::sort(dep + 1, dep + dep[0] + 1);
   int t = 0, l, r;
   for (l = 1, r = dep[0]; l < r;) {
     if (dep[l] + dep[r] <= k) {
-      t += r - l; ++l;
+      t += r - l;
+      ++l;
     } else {
       --r;
     }
@@ -92,7 +101,9 @@ void work(int x) {
 int s, t, w;
 int main() {
   while (233) {
-    ans = 0; root = 0; cnt = 0;
+    ans = 0;
+    root = 0;
+    cnt = 0;
     scanf("%d%d", &n, &k);
     if (!n) break;
     memset(vis, 0, sizeof vis);
@@ -101,7 +112,8 @@ int main() {
       scanf("%d%d%d", &s, &t, &w);
       add(s, t, w);
     }
-    sum = n; f[0] = ~0u >> 2;
+    sum = n;
+    f[0] = ~0u >> 2;
     getRoot(1, 0);
     work(root);
     printf("%d\n", ans);

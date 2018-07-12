@@ -3,10 +3,10 @@
  * @Copyright SATA
  * @Example http://tyvj.cn/p/3006
  */
-#include <cstdio>// NOLINT
-#include <cstring>// NOLINT
-#include <bits/stdc++.h>// NOLINT
-#include <cmath>// NOLINT
+#include <bits/stdc++.h>  // NOLINT
+#include <cmath>          // NOLINT
+#include <cstdio>         // NOLINT
+#include <cstring>        // NOLINT
 #define x1 x11
 #define y1 y11
 
@@ -16,14 +16,14 @@
 #define gd(x, y, z) for (int x = (y), __ = (z); x >= __; --x)
 
 #ifdef WIN32
-  #define LLD "%I64d"
-  #define LLU "%I64u"
+#define LLD "%I64d"
+#define LLU "%I64u"
 #else
-  #define LLD "%lld"
-  #define LLU "%llu"
+#define LLD "%lld"
+#define LLU "%llu"
 #endif
 
-typedef long long LL;// NOLINT
+typedef long long LL;  // NOLINT
 typedef long double real;
 
 const double INF = 1e100;
@@ -48,18 +48,21 @@ int top, cur;
 double solve() {
   priv['+'] = priv['-'] = 3;
   priv['*'] = priv['/'] = 2;
-  priv['^'] = 1; priv['('] = 10;
+  priv['^'] = 1;
+  priv['('] = 10;
   double x, y, t = 0;
   char last = 0;
   int len = strlen(buf);
   f(i, 0, len) {
-    if (buf[i] >= 'a' &&  buf[i] <= 'z') {
+    if (buf[i] >= 'a' && buf[i] <= 'z') {
       num[top++] = (val[buf[i]]);
     } else if (buf[i] >= '0' && buf[i] <= '9') {
       num[top++] = (atof(buf + i));
-      for (; i + 1 < len && buf[i + 1] >= '0' && buf[i + 1] <= '9'; ++i);// NOLINT
+      for (; i + 1 < len && buf[i + 1] >= '0' && buf[i + 1] <= '9'; ++i)
+        ;  // NOLINT
       if (i + 1 < len && buf[i + 1] == '.') {
-        for (i++; i + 1 < len && buf[i + 1] >= 0 && buf[i + 1] <= '9'; ++i);// NOLINT
+        for (i++; i + 1 < len && buf[i + 1] >= 0 && buf[i + 1] <= '9'; ++i)
+          ;  // NOLINT
       }
     } else if (buf[i] == '(') {
       oper[cur++] = (buf[i]);
@@ -106,5 +109,5 @@ double solve() {
 }
 int main() {
   scanf("%s", buf);
-  printf("%d\n", int(solve()) % 10000);// NOLINT
+  printf("%d\n", int(solve()) % 10000);  // NOLINT
 }

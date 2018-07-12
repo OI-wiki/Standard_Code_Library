@@ -3,9 +3,9 @@
  * @Copyright SATA(The Star And Thank Author License)
  * @Example http://poj.org/problem?id=2155
  */
-#include <cstdio>// NOLINT
-#include <cstring>// NOLINT
-#include <cmath>// NOLINT
+#include <cmath>    // NOLINT
+#include <cstdio>   // NOLINT
+#include <cstring>  // NOLINT
 #define x1 x11
 #define y1 y11
 
@@ -15,14 +15,14 @@
 #define gd(x, y, z) for (int x = (y), __ = (z); x >= __; --x)
 
 #ifdef WIN32
-  #define LLD "%I64d"
-  #define LLU "%I64u"
+#define LLD "%I64d"
+#define LLU "%I64u"
 #else
-  #define LLD "%lld"
-  #define LLU "%llu"
+#define LLD "%lld"
+#define LLU "%llu"
 #endif
 
-typedef long long LL;// NOLINT
+typedef long long LL;  // NOLINT
 typedef long double real;
 
 const double INF = 1e100;
@@ -31,7 +31,7 @@ const double pi = acos(-1.0);
 const double EPS = 1e-8;
 const int MAXN = 100033;
 
-inline void read(int &x) { // NOLINT
+inline void read(int &x) {  // NOLINT
   char c = getchar();
   int f = 1;
   while (c < '0' || c > '9') {
@@ -87,7 +87,8 @@ int main() {
         if (y2 < n) upd(x1, y2 + 1);
       } else {
         printf("%d\n", get(x1, y1));
-//        printf("%d\n", (get(n, n) + get(x1 - 1, y1 - 1) - get(n, y1 - 1) - get(x1 - 1, n))); NOLINT
+        //        printf("%d\n", (get(n, n) + get(x1 - 1, y1 - 1) - get(n, y1 -
+        //        1) - get(x1 - 1, n))); NOLINT
       }
     }
     puts("");
@@ -99,5 +100,3 @@ int main() {
 #endif
   return 0;
 }
-
-

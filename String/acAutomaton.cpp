@@ -3,11 +3,11 @@
  * @Copyright SATA
  * @Example http://acm.hdu.edu.cn/showproblem.php?pid=2222
  */
-#include <cstdio>// NOLINT
-#include <cstring>// NOLINT
-#include <queue>// NOLINT
-#include <bits/stdc++.h>// NOLINT
-#include <cmath>// NOLINT
+#include <bits/stdc++.h>  // NOLINT
+#include <cmath>          // NOLINT
+#include <cstdio>         // NOLINT
+#include <cstring>        // NOLINT
+#include <queue>          // NOLINT
 #define x1 x11
 #define y1 y11
 
@@ -17,14 +17,14 @@
 #define gd(x, y, z) for (int x = (y), __ = (z); x >= __; --x)
 
 #ifdef WIN32
-  #define LLD "%I64d"
-  #define LLU "%I64u"
+#define LLD "%I64d"
+#define LLU "%I64u"
 #else
-  #define LLD "%lld"
-  #define LLU "%llu"
+#define LLD "%lld"
+#define LLU "%llu"
 #endif
 
-typedef long long LL;// NOLINT
+typedef long long LL;  // NOLINT
 typedef long double real;
 
 const double INF = 1e100;
@@ -40,12 +40,11 @@ struct node {
   node *fail, *ch[26];
   int cnt;
 } pool[MAXN], *tail;
-inline void init() {
-  tail = pool;
-}
+inline void init() { tail = pool; }
 inline node* newnode() {
   node* ans = tail++;
-  ans->fail = NULL; ans->cnt = 0;
+  ans->fail = NULL;
+  ans->cnt = 0;
   memset(ans->ch, 0, sizeof ans->ch);
   return ans;
 }
@@ -66,7 +65,8 @@ void getFail(node* root) {
   root->fail = NULL;
   Q.push(root);
   while (!Q.empty()) {
-    node* tee = Q.front(); Q.pop();
+    node* tee = Q.front();
+    Q.pop();
     node* p = NULL;
     f(i, 0, 26) {
       if (tee->ch[i]) {
@@ -94,7 +94,8 @@ int query(node* root, const char* str) {
     if (p == NULL) p = root;
     node* tee = p;
     while (tee != root && tee->cnt != -1) {
-      ans += tee->cnt; tee->cnt = -1;
+      ans += tee->cnt;
+      tee->cnt = -1;
       tee = tee->fail;
     }
   }

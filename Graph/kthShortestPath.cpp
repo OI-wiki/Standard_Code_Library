@@ -4,10 +4,10 @@
  * @Example http://poj.org/problem?id=2449
  */
 
-#include <cstdio>// NOLINT
-#include <queue>// NOLINT
-#include <cstring>// NOLINT
-#include <cmath>// NOLINT
+#include <cmath>    // NOLINT
+#include <cstdio>   // NOLINT
+#include <cstring>  // NOLINT
+#include <queue>    // NOLINT
 #define x1 x11
 #define y1 y11
 
@@ -17,14 +17,14 @@
 #define gd(x, y, z) for (int x = (y), __ = (z); x >= __; --x)
 
 #ifdef WIN32
-  #define LLD "%I64d"
-  #define LLU "%I64u"
+#define LLD "%I64d"
+#define LLU "%I64u"
 #else
-  #define LLD "%lld"
-  #define LLU "%llu"
+#define LLD "%lld"
+#define LLU "%llu"
 #endif
 
-typedef long long LL;// NOLINT
+typedef long long LL;  // NOLINT
 typedef long double real;
 
 const double INF = 1e100;
@@ -39,18 +39,22 @@ struct edge {
 int head[MAXN], cnt = 1;
 int Head[MAXN], Cnt = 1;
 inline void add(int s, int t, int w) {
-  e[++cnt].t = t; e[cnt].x = head[s]; head[s] = cnt; e[cnt].w = w;
+  e[++cnt].t = t;
+  e[cnt].x = head[s];
+  head[s] = cnt;
+  e[cnt].w = w;
 }
 inline void Add(int s, int t, int w) {
-  E[++Cnt].t = t; E[Cnt].x = Head[s]; Head[s] = Cnt; E[Cnt].w = w;
+  E[++Cnt].t = t;
+  E[Cnt].x = Head[s];
+  Head[s] = Cnt;
+  E[Cnt].w = w;
 }
 struct node {
   int fx, gx, v;
   inline node() {}
-  inline node(int a, int b, int c):fx(a), gx(b), v(c) {}
-  inline bool operator < (const node& T) const {
-    return fx > T.fx;
-  }
+  inline node(int a, int b, int c) : fx(a), gx(b), v(c) {}
+  inline bool operator<(const node& T) const { return fx > T.fx; }
 };
 int inq[MAXN];
 int dis[MAXN];
@@ -67,9 +71,11 @@ void spfa(int ed) {
   while (!Q.empty()) Q.pop();
   Q.push(ed);
   int u, v;
-  inq[ed] = 1; dis[ed] = 0;
+  inq[ed] = 1;
+  dis[ed] = 0;
   while (!Q.empty()) {
-    u = Q.front(); Q.pop();
+    u = Q.front();
+    Q.pop();
     for (int i = Head[u]; i; i = E[i].x) {
       v = E[i].t;
       if (dis[v] > dis[u] + E[i].w) {
@@ -91,7 +97,8 @@ int aStar(int st, int ed) {
   PQ.push(node(dis[st], 0, st));
   node tee;
   while (!PQ.empty()) {
-    tee = PQ.top(); PQ.pop();
+    tee = PQ.top();
+    PQ.pop();
     ++inq[tee.v];
     if (inq[ed] == k) return tee.fx;
     if (inq[tee.v] > k) continue;

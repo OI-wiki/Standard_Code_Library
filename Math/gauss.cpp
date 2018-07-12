@@ -3,10 +3,10 @@
  * @Copyright SATA
  * @Example http://www.lydsy.com:808/JudgeOnline/problem.php?id=1013
  */
-#include <cstdio>// NOLINT
-#include <cstring>// NOLINT
-#include <bits/stdc++.h>// NOLINT
-#include <cmath>// NOLINT
+#include <bits/stdc++.h>  // NOLINT
+#include <cmath>          // NOLINT
+#include <cstdio>         // NOLINT
+#include <cstring>        // NOLINT
 #define x1 x11
 #define y1 y11
 
@@ -16,14 +16,14 @@
 #define gd(x, y, z) for (int x = (y), __ = (z); x >= __; --x)
 
 #ifdef WIN32
-  #define LLD "%I64d"
-  #define LLU "%I64u"
+#define LLD "%I64d"
+#define LLU "%I64u"
 #else
-  #define LLD "%lld"
-  #define LLU "%llu"
+#define LLD "%lld"
+#define LLU "%llu"
 #endif
 
-typedef long long LL;// NOLINT
+typedef long long LL;  // NOLINT
 typedef long double real;
 
 const double INF = 1e100;
@@ -32,12 +32,9 @@ const double pi = acos(-1.0);
 const double EPS = 1e-8;
 const int MAXN = 100033;
 
-
 int n;
 double f[23], a[23][23];
-double sqr(double x) {
-  return x * x;
-}
+double sqr(double x) { return x * x; }
 double tee;
 void init() {
   scanf("%d", &n);
@@ -57,11 +54,10 @@ void gauss(int n) {
       }
     }
     if (fabs(a[i][i]) < EPS) continue;
-    f(j, 0, n)
-      if (i != j && fabs(a[j][i]) > EPS) {
-        double det = a[j][i] / a[i][i];
-        g(k, i, n) a[j][k] -= a[i][k] * det;
-      }
+    f(j, 0, n) if (i != j && fabs(a[j][i]) > EPS) {
+      double det = a[j][i] / a[i][i];
+      g(k, i, n) a[j][k] -= a[i][k] * det;
+    }
   }
   f(i, 0, n) {
     if (fabs(a[i][i]) < EPS) {

@@ -3,10 +3,10 @@
  * @Copyright SATA
  * @Example http://www.lydsy.com/JudgeOnline/problem.php?id=2733
  */
-#include <cstdio>// NOLINT
-#include <cstring>// NOLINT
-#include <bits/stdc++.h>// NOLINT
-#include <cmath>// NOLINT
+#include <bits/stdc++.h>  // NOLINT
+#include <cmath>          // NOLINT
+#include <cstdio>         // NOLINT
+#include <cstring>        // NOLINT
 #define x1 x11
 #define y1 y11
 
@@ -16,14 +16,14 @@
 #define gd(x, y, z) for (int x = (y), __ = (z); x >= __; --x)
 
 #ifdef WIN32
-  #define LLD "%I64d"
-  #define LLU "%I64u"
+#define LLD "%I64d"
+#define LLU "%I64u"
 #else
-  #define LLD "%lld"
-  #define LLU "%llu"
+#define LLD "%lld"
+#define LLU "%llu"
 #endif
 
-typedef long long LL;// NOLINT
+typedef long long LL;  // NOLINT
 typedef long double real;
 
 const double INF = 1e100;
@@ -36,9 +36,10 @@ int n, m;
 struct node {
   int v, s, r, c;
   node* ch[2];
-  inline node(int v = 0):v(v) {// NOLINT
+  inline node(int v = 0) : v(v) {  // NOLINT
     ch[0] = ch[1] = NULL;
-    r = rand(); s = c = 1;// NOLINT
+    r = rand();
+    s = c = 1;  // NOLINT
   }
   inline int cmp(int x) const {
     if (x == v) return -1;
@@ -55,13 +56,15 @@ struct node {
     if (ch[1]) ch[1]->print();
   }
 };
-void rotate(node* &o, int d) {// NOLINT
+void rotate(node*& o, int d) {  // NOLINT
   node* k = o->ch[d ^ 1];
   o->ch[d ^ 1] = k->ch[d];
   k->ch[d] = o;
-  o->maintain(); k->maintain(); o = k;
+  o->maintain();
+  k->maintain();
+  o = k;
 }
-void insert(node* &o, int x) {// NOLINT
+void insert(node*& o, int x) {  // NOLINT
   if (o == NULL) {
     o = new node(x);
     return;
@@ -79,16 +82,22 @@ void insert(node* &o, int x) {// NOLINT
 void remove(node* o, int x) {
   if (o->v == x) {
     if (o->c > 1) {
-      --o->c; --o->s; return;
+      --o->c;
+      --o->s;
+      return;
     }
     node* u = o;
     if (o->ch[0] && o->ch[1]) {
       int d = (o->ch[0]->r < o->ch[1]->r);
-      rotate(o, d); remove(o->ch[d], x);
+      rotate(o, d);
+      remove(o->ch[d], x);
     } else {
-      if (o->ch[0] == NULL && o->ch[1] == NULL) o = NULL;
-      else if (o->ch[0]) o = o->ch[0];
-      else if (o->ch[1]) o = o->ch[1];
+      if (o->ch[0] == NULL && o->ch[1] == NULL)
+        o = NULL;
+      else if (o->ch[0])
+        o = o->ch[0];
+      else if (o->ch[1])
+        o = o->ch[1];
       delete u;
     }
   } else {
@@ -118,7 +127,8 @@ void getPre(node* o, int x) {
   if (o == NULL) return;
   while (o) {
     if (o->v < x) {
-      ans = o; o = o->ch[1];
+      ans = o;
+      o = o->ch[1];
     } else {
       o = o->ch[0];
     }
@@ -128,7 +138,8 @@ void getSuc(node* o, int x) {
   ans = o;
   while (o) {
     if (x < o->v) {
-      ans = o; o = o->ch[0];
+      ans = o;
+      o = o->ch[0];
     } else {
       o = o->ch[1];
     }
@@ -142,12 +153,26 @@ int main() {
   g(i, 1, n) {
     scanf("%d%d", &opt, &x);
     switch (opt) {
-      case 1: insert(root, x); break;
-      case 2: remove(root, x); break;
-      case 3: printf("%d\n", getRank(root, x)); break;
-      case 4: printf("%d\n", getKth(root, x)); break;
-      case 5: getPre(root, x); /*if (ans)*/ printf("%d\n", ans->v); break;
-      case 6: getSuc(root, x); /*if (ans)*/ printf("%d\n", ans->v); break;
+      case 1:
+        insert(root, x);
+        break;
+      case 2:
+        remove(root, x);
+        break;
+      case 3:
+        printf("%d\n", getRank(root, x));
+        break;
+      case 4:
+        printf("%d\n", getKth(root, x));
+        break;
+      case 5:
+        getPre(root, x); /*if (ans)*/
+        printf("%d\n", ans->v);
+        break;
+      case 6:
+        getSuc(root, x); /*if (ans)*/
+        printf("%d\n", ans->v);
+        break;
     }
   }
 }

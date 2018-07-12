@@ -3,10 +3,10 @@
  * @Copyright SATA
  * @Example http://poj.org/problem?id=3243
  */
-#include <cstdio>// NOLINT
-#include <cstring>// NOLINT
-#include <map>// NOLINT
-#include <cmath>// NOLINT
+#include <cmath>    // NOLINT
+#include <cstdio>   // NOLINT
+#include <cstring>  // NOLINT
+#include <map>      // NOLINT
 #define x1 x11
 #define y1 y11
 
@@ -16,14 +16,14 @@
 #define gd(x, y, z) for (int x = (y), __ = (z); x >= __; --x)
 
 #ifdef WIN32
-  #define LLD "%I64d"
-  #define LLU "%I64u"
+#define LLD "%I64d"
+#define LLU "%I64u"
 #else
-  #define LLD "%lld"
-  #define LLU "%llu"
+#define LLD "%lld"
+#define LLU "%llu"
 #endif
 
-typedef long long LL;// NOLINT
+typedef long long LL;  // NOLINT
 typedef long double real;
 
 const double INF = 1e100;
@@ -43,7 +43,8 @@ LL find(LL x) {
 void insert(LL x, LL s) {
   LL pos = find(x);
   if (hs[pos] == -1) {
-    hs[pos] = x; id[pos] = s;
+    hs[pos] = x;
+    id[pos] = s;
   }
 }
 LL getVal(LL x) {
@@ -79,14 +80,17 @@ void solve(LL a, LL b, LL c) {
       // puts("");
       return;
     }
-    ++k; b /= t; c /= t; d = d * (a / t) % c;
+    ++k;
+    b /= t;
+    c /= t;
+    d = d * (a / t) % c;
     if (b == d) {
-      printf(LLD"\n", k);
+      printf(LLD "\n", k);
       return;
     }
   }
   // M.clear();
-  LL m  = ceil(sqrt(c + .5));  // s = a ** m
+  LL m = ceil(sqrt(c + .5));  // s = a ** m
   s = get(a, m, c);
   // M[b] = 0;
   g(j, 1, m) {
@@ -99,9 +103,9 @@ void solve(LL a, LL b, LL c) {
     d = d * s % c;
     // if (M[d]) {
     if ((z = getVal(d)) != -1) {
-    // if (M.find(d) != M.end()) {
+      // if (M.find(d) != M.end()) {
       // printf("%d %d %d\n", i, M[d], m);
-      printf(LLD"\n", ((k + i * m - z + c) % c + c) % c);
+      printf(LLD "\n", ((k + i * m - z + c) % c + c) % c);
       return;
     }
   }
@@ -114,7 +118,7 @@ int main() {
 #endif
 
   while (~scanf("%d%d%d", &a, &c, &b) && (a || b || c)) {
-  // while (~scanf("%d%d%d", &c, &a, &b)) {
+    // while (~scanf("%d%d%d", &c, &a, &b)) {
     solve(a % c, b % c, c);
   }
 

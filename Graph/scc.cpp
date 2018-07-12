@@ -4,10 +4,10 @@
  * @date    2016-04-15 08:46:39
  * @copyright MIT
  */
-#include <cstdio>// NOLINT
-#include <cstring>// NOLINT
-#include <bits/stdc++.h>// NOLINT
-#include <cmath>// NOLINT
+#include <bits/stdc++.h>  // NOLINT
+#include <cmath>          // NOLINT
+#include <cstdio>         // NOLINT
+#include <cstring>        // NOLINT
 #define x1 x11
 #define y1 y11
 
@@ -17,14 +17,14 @@
 #define gd(x, y, z) for (int x = (y), __ = (z); x >= __; --x)
 
 #ifdef WIN32
-  #define LLD "%I64d"
-  #define LLU "%I64u"
+#define LLD "%I64d"
+#define LLU "%I64u"
 #else
-  #define LLD "%lld"
-  #define LLU "%llu"
+#define LLD "%lld"
+#define LLU "%llu"
 #endif
 
-typedef long long LL;// NOLINT
+typedef long long LL;  // NOLINT
 typedef long double real;
 
 const double INF = 1e100;
@@ -39,10 +39,15 @@ struct edge {
 } e[MAXN << 1], E[MAXN << 1];
 int head[MAXN], cnt = 1, Head[MAXN], c = 1;
 inline void add(int s, int t) {
-  e[++cnt].t = t; e[cnt].x = head[s]; head[s] = cnt; e[cnt].s = s;
+  e[++cnt].t = t;
+  e[cnt].x = head[s];
+  head[s] = cnt;
+  e[cnt].s = s;
 }
 inline void Add(int s, int t) {
-  E[++c].t = t; E[c].x = Head[s]; Head[s] = c;
+  E[++c].t = t;
+  E[c].x = Head[s];
+  Head[s] = c;
 }
 int dfn[MAXN], low[MAXN], scc, idx, sta[MAXN], top;
 bool inSta[MAXN];
@@ -51,13 +56,15 @@ int has[MAXN], w[MAXN];
 void tarjan(int u) {
   int v;
   dfn[u] = low[u] = ++idx;
-  inSta[u] = 1; sta[top++] = u;
+  inSta[u] = 1;
+  sta[top++] = u;
   for (int i = head[u]; i; i = e[i].x) {
     v = e[i].t;
     if (!dfn[v]) {
       tarjan(v);
       if (low[v] < low[u]) low[u] = low[v];
-    } else if (inSta[v] && dfn[v] < low[u]) low[u] = dfn[v]; // NOLINT
+    } else if (inSta[v] && dfn[v] < low[u])
+      low[u] = dfn[v];  // NOLINT
   }
   if (low[u] == dfn[u]) {
     ++scc;
@@ -70,15 +77,15 @@ void tarjan(int u) {
     } while (u != v);
   }
 }
-void init() {
-  g(i, 1, n) if (!dfn[i]) tarjan(i);
-}
+void init() { g(i, 1, n) if (!dfn[i]) tarjan(i); }
 int fa[MAXN];
 int get(int x) {
   int tee = fa[x], q;
   while (tee != fa[tee]) tee = fa[tee];
   while (x != tee) {
-    q = fa[x]; fa[x] = tee; x = q;
+    q = fa[x];
+    fa[x] = tee;
+    x = q;
   }
   return tee;
 }
@@ -112,14 +119,16 @@ int main() {
   g(i, 1, n) scanf("%d", w + i);
   scanf("%d%d", &s, &p);
   f(i, 0, p) {
-    scanf("%d", &t); has[t] = 1;
+    scanf("%d", &t);
+    has[t] = 1;
   }
   init();
   bfs();
   // g(i, 1, n) fa[i] = i;
   g(i, 2, cnt) {
     if (!vis[e[i].s] || !vis[e[i].t]) continue;
-    u = belong[e[i].s]; v = belong[e[i].t];
+    u = belong[e[i].s];
+    v = belong[e[i].t];
     if (u != v) {
       Add(u, v);
       ++d[v];
@@ -132,7 +141,7 @@ int main() {
     if (bar[u]) ans = std::max(ans, dp[u] + cost[u]);
     for (int i = Head[u]; i; i = E[i].x) {
       v = E[i].t;
-      dp[v] = std::max(dp[v], dp[u] + cost[u]); // NOLINT
+      dp[v] = std::max(dp[v], dp[u] + cost[u]);  // NOLINT
       --d[v];
       if (!d[v]) sta[++top] = v;
     }

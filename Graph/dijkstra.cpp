@@ -7,10 +7,10 @@
  * @example http://hihocoder.com/problemset/problem/1081
  * @warning using 0x1f to memset for inf
  */
-#include <cstdio>// NOLINT
-#include <cstring>// NOLINT
-#include <bits/stdc++.h>// NOLINT
-#include <cmath>// NOLINT
+#include <bits/stdc++.h>  // NOLINT
+#include <cmath>          // NOLINT
+#include <cstdio>         // NOLINT
+#include <cstring>        // NOLINT
 #define x1 x11
 #define y1 y11
 
@@ -20,14 +20,14 @@
 #define gd(x, y, z) for (int x = (y), __ = (z); x >= __; --x)
 
 #ifdef WIN32
-  #define LLD "%I64d"
-  #define LLU "%I64u"
+#define LLD "%I64d"
+#define LLU "%I64u"
 #else
-  #define LLD "%lld"
-  #define LLU "%llu"
+#define LLD "%lld"
+#define LLU "%llu"
 #endif
 
-typedef long long LL;// NOLINT
+typedef long long LL;  // NOLINT
 typedef long double real;
 
 const double INF = 1e100;
@@ -41,12 +41,18 @@ struct node {
 } e[MAXN];
 int head[MAXN], cnt = 1;
 inline void add(int s, int t, int w) {
-  e[++cnt].t = t; e[cnt].x = head[s]; head[s] = cnt; e[cnt].w = w;
-  e[++cnt].t = s; e[cnt].x = head[t]; head[t] = cnt; e[cnt].w = w;
+  e[++cnt].t = t;
+  e[cnt].x = head[s];
+  head[s] = cnt;
+  e[cnt].w = w;
+  e[++cnt].t = s;
+  e[cnt].x = head[t];
+  head[t] = cnt;
+  e[cnt].w = w;
 }
 int n, m, s, t;
-typedef std::pair<int, int> PII;// NOLINT
-std::priority_queue<PII, std::vector<PII>, std::greater<PII> > Q;// NOLINT
+typedef std::pair<int, int> PII;                                   // NOLINT
+std::priority_queue<PII, std::vector<PII>, std::greater<PII> > Q;  // NOLINT
 int dis[MAXN], vis[MAXN];
 void dij() {
   while (!Q.empty()) Q.pop();
@@ -57,7 +63,8 @@ void dij() {
   PII tee;
   int u;
   while (!Q.empty()) {
-    tee = Q.top(); Q.pop();
+    tee = Q.top();
+    Q.pop();
     u = tee.second;
     if (vis[u]) continue;
     vis[u] = 1;

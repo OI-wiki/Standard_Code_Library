@@ -1,13 +1,14 @@
 /**
  * @Author Ir1d(sirius.caffrey@gmail.com)
  * @Copyright SATA
- * @Example https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&category=17&page=show_problem&problem=1486
+ * @Example
+ * https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&category=17&page=show_problem&problem=1486
  * http://www.bnuoj.com/v3/problem_show.php?pid=9661
  */
-#include <cstdio>// NOLINT
-#include <cstring>// NOLINT
-#include <bits/stdc++.h>// NOLINT
-#include <cmath>// NOLINT
+#include <bits/stdc++.h>  // NOLINT
+#include <cmath>          // NOLINT
+#include <cstdio>         // NOLINT
+#include <cstring>        // NOLINT
 #define x1 x11
 #define y1 y11
 
@@ -17,14 +18,14 @@
 #define gd(x, y, z) for (int x = (y), __ = (z); x >= __; --x)
 
 #ifdef WIN32
-  #define LLD "%I64d"
-  #define LLU "%I64u"
+#define LLD "%I64d"
+#define LLU "%I64u"
 #else
-  #define LLD "%lld"
-  #define LLU "%llu"
+#define LLD "%lld"
+#define LLU "%llu"
 #endif
 
-typedef long long LL;// NOLINT
+typedef long long LL;  // NOLINT
 typedef long double real;
 
 const double INF = 1e100;
@@ -34,9 +35,7 @@ const double EPS = 1e-8;
 const int MAXN = 100033;
 
 double a;
-inline double F(double x) {
-  return sqrt(1 + 4 * a * a * x * x);
-}
+inline double F(double x) { return sqrt(1 + 4 * a * a * x * x); }
 inline double simpson(double a, double b) {
   double c = a + (b - a) / 2;
   return (F(a) + F(b) + 4 * F(c)) * (b - a) / 6.0;
@@ -75,8 +74,10 @@ int main() {
     x = 0, y = H;
     while (y - x > 1e-5) {
       md = x + (y - x) / 2.0;
-      if (getAns(D1, md) < L1) x = md;
-      else y = md; // NOLINT
+      if (getAns(D1, md) < L1)
+        x = md;
+      else
+        y = md;  // NOLINT
     }
     if (cas > 1) puts("");
     printf("Case %d:\n%.2lf\n", cas, H - x);
@@ -88,5 +89,3 @@ int main() {
 #endif
   return 0;
 }
-
-

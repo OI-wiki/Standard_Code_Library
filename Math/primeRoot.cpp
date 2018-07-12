@@ -3,10 +3,10 @@
  * @Copyright SATA
  * @Example https://www.51nod.com/onlineJudge/questionCode.html#!problemId=1135
  */
-#include <cstdio>// NOLINT
-#include <cstring>// NOLINT
-#include <bits/stdc++.h>// NOLINT
-#include <cmath>// NOLINT
+#include <bits/stdc++.h>  // NOLINT
+#include <cmath>          // NOLINT
+#include <cstdio>         // NOLINT
+#include <cstring>        // NOLINT
 #define x1 x11
 #define y1 y11
 
@@ -16,14 +16,14 @@
 #define gd(x, y, z) for (int x = (y), __ = (z); x >= __; --x)
 
 #ifdef WIN32
-  #define LLD "%I64d"
-  #define LLU "%I64u"
+#define LLD "%I64d"
+#define LLU "%I64u"
 #else
-  #define LLD "%lld"
-  #define LLU "%llu"
+#define LLD "%lld"
+#define LLU "%llu"
 #endif
 
-typedef long long LL;// NOLINT
+typedef long long LL;  // NOLINT
 typedef long double real;
 
 const double INF = 1e100;
@@ -59,7 +59,11 @@ LL getRoot(LL p) {
   }
   if (tee != 1) a.push_back(tee);
   LL g = 1;
-  while (233) if (test(g, p)) return g; else ++g; // NOLINT
+  while (233)
+    if (test(g, p))
+      return g;
+    else
+      ++g;  // NOLINT
 }
 int main() {
   scanf("%d", &p);

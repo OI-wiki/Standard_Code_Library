@@ -3,10 +3,10 @@
  * @Copyright SATA
  * @Example http://www.lydsy.com/JudgeOnline/problem.php?id=2733
  */
-#include <cstdio>// NOLINT
-#include <cstring>// NOLINT
-#include <bits/stdc++.h>// NOLINT
-#include <cmath>// NOLINT
+#include <bits/stdc++.h>  // NOLINT
+#include <cmath>          // NOLINT
+#include <cstdio>         // NOLINT
+#include <cstring>        // NOLINT
 #define x1 x11
 #define y1 y11
 
@@ -16,14 +16,14 @@
 #define gd(x, y, z) for (int x = (y), __ = (z); x >= __; --x)
 
 #ifdef WIN32
-  #define LLD "%I64d"
-  #define LLU "%I64u"
+#define LLD "%I64d"
+#define LLU "%I64u"
 #else
-  #define LLD "%lld"
-  #define LLU "%llu"
+#define LLD "%lld"
+#define LLU "%llu"
 #endif
 
-typedef long long LL;// NOLINT
+typedef long long LL;  // NOLINT
 typedef long double real;
 
 const double INF = 1e100;
@@ -35,10 +35,14 @@ const int MAXN = 100033;
 struct node {
   node* ch[2];
   int r, v, s, c, idx;
-  node(int v):v(v) {ch[0] = ch[1] = NULL; r = rand(); s = 1; c = 1; idx = 0;}// NOLINT
-  inline bool operator < (const node& T) const {
-    return r < T.r;
-  }
+  node(int v) : v(v) {
+    ch[0] = ch[1] = NULL;
+    r = rand();
+    s = 1;
+    c = 1;
+    idx = 0;
+  }  // NOLINT
+  inline bool operator<(const node& T) const { return r < T.r; }
   inline int cmp(int x) const {
     if (x == v) return -1;
     if (x < 0) return 0;
@@ -50,11 +54,15 @@ struct node {
   }
 };
 node* root[MAXN];
-void rotate(node* &o, int d) {// NOLINT
-  node* k = o->ch[d ^ 1]; o->ch[d ^ 1] = k->ch[d]; k->ch[d] = o;
-  o->maintain(); k->maintain(); o = k;
+void rotate(node*& o, int d) {  // NOLINT
+  node* k = o->ch[d ^ 1];
+  o->ch[d ^ 1] = k->ch[d];
+  k->ch[d] = o;
+  o->maintain();
+  k->maintain();
+  o = k;
 }
-void insert(node* &o, int x, int idx) {// NOLINT
+void insert(node*& o, int x, int idx) {  // NOLINT
   if (o == NULL) {
     o = new node(x);
     o->idx = idx;
@@ -70,13 +78,14 @@ void insert(node* &o, int x, int idx) {// NOLINT
   }
   o->maintain();
 }
-void remove(node* &o, int x) {// NOLINT
+void remove(node*& o, int x) {  // NOLINT
   int d = o->cmp(x);
   if (d == -1) {
     node* u = o;
     if (o->ch[0] && o->ch[1]) {
       int d2 = o->ch[0]->r > o->ch[1]->r;
-      rotate(o, d2); remove(o->ch[d2], x);
+      rotate(o, d2);
+      remove(o->ch[d2], x);
     } else {
       if (o->ch[0]) {
         o = o->ch[1];
@@ -90,7 +99,7 @@ void remove(node* &o, int x) {// NOLINT
   }
   if (o) o->maintain();
 }
-int getKth(node* o, int k) {// NOLINT
+int getKth(node* o, int k) {  // NOLINT
   if (o == NULL || k <= 0 || k > o->s) return -1;
   int s = 0;
   if (o->ch[0]) s += o->ch[0]->s;
@@ -98,7 +107,7 @@ int getKth(node* o, int k) {// NOLINT
   if (k > s + o->c) return getKth(o->ch[1], k - s - o->c);
   return o->idx;
 }
-void merge(node* &a, node* &b) { // merge a into b NOLINT
+void merge(node*& a, node*& b) {  // merge a into b NOLINT
   if (a->ch[0]) merge(a->ch[0], b);
   if (a->ch[1]) merge(a->ch[1], b);
   insert(b, a->v, a->idx);
@@ -110,7 +119,9 @@ int get(int x) {
   int tee = fa[x], q;
   while (tee != fa[tee]) tee = fa[tee];
   while (x != tee) {
-    q = fa[x]; fa[x] = tee; x = q;
+    q = fa[x];
+    fa[x] = tee;
+    x = q;
   }
   return tee;
 }
@@ -118,9 +129,11 @@ void add(int s, int t) {
   int u = get(s), v = get(t);
   if (u != v) {
     if (root[u]->s < root[v]->s) {
-      fa[u] = v; merge(root[u], root[v]);
+      fa[u] = v;
+      merge(root[u], root[v]);
     } else {
-      fa[v] = u; merge(root[v], root[u]);
+      fa[v] = u;
+      merge(root[v], root[u]);
     }
   }
 }

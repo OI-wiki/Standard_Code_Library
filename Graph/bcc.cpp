@@ -3,13 +3,13 @@
  * @Copyright SATA
  * @Example http://hihocoder.com/problemset/problem/1184
  */
-#include <cstdio>// NOLINT
-#include <cstring>// NOLINT
-#include <bits/stdc++.h>// NOLINT
-#include <algorithm>// NOLINT
-#include <vector>// NOLINT
-#include <utility>// NOLINT
-#include <cmath>// NOLINT
+#include <bits/stdc++.h>  // NOLINT
+#include <algorithm>      // NOLINT
+#include <cmath>          // NOLINT
+#include <cstdio>         // NOLINT
+#include <cstring>        // NOLINT
+#include <utility>        // NOLINT
+#include <vector>         // NOLINT
 #define x1 x11
 #define y1 y11
 
@@ -19,14 +19,14 @@
 #define gd(x, y, z) for (int x = (y), __ = (z); x >= __; --x)
 
 #ifdef WIN32
-  #define LLD "%I64d"
-  #define LLU "%I64u"
+#define LLD "%I64d"
+#define LLU "%I64u"
 #else
-  #define LLD "%lld"
-  #define LLU "%llu"
+#define LLD "%lld"
+#define LLU "%llu"
 #endif
 
-typedef long long LL;// NOLINT
+typedef long long LL;  // NOLINT
 typedef long double real;
 
 const double INF = 1e100;
@@ -41,8 +41,14 @@ struct node {
 } e[MAXN << 1];
 int head[MAXN], cnt = 1;
 inline void add(int s, int t) {
-  e[++cnt].t = t; e[cnt].s = s; e[cnt].x = head[s]; head[s] = cnt;
-  e[++cnt].t = s; e[cnt].s = t; e[cnt].x = head[t]; head[t] = cnt;
+  e[++cnt].t = t;
+  e[cnt].s = s;
+  e[cnt].x = head[s];
+  head[s] = cnt;
+  e[++cnt].t = s;
+  e[cnt].s = t;
+  e[cnt].x = head[t];
+  head[t] = cnt;
 }
 int dfn[MAXN], cut[MAXN], belong[MAXN << 1], idx, bcc, low[MAXN];
 std::vector<int> res[MAXN];
@@ -62,17 +68,18 @@ void dfs(int u, int fa) {
       if (low[v] < low[u]) low[u] = low[v];
       if (low[v] >= dfn[u]) {
         cut[u] = 1;
-        ++bcc; res[bcc].clear();
+        ++bcc;
+        res[bcc].clear();
         for (;;) {
           tee = sta[--top];
           belong[tee.second] = bcc;
           // if (belong[tee.first.first] != bcc) {
-            // res[bcc].push_back(tee.first.first);
-            // belong[tee.first] = bcc;
+          // res[bcc].push_back(tee.first.first);
+          // belong[tee.first] = bcc;
           // }
           // if (belong[tee.first.second] != bcc) {
-            // res[bcc].push_back(tee.first.second);
-            // belong[tee.second] = bcc;
+          // res[bcc].push_back(tee.first.second);
+          // belong[tee.second] = bcc;
           // }
           if (tee.first.first == u && tee.first.second == v) break;
         }
@@ -101,12 +108,14 @@ int main() {
   solve();
   printf("%d\n", bcc);
   memset(mn, 0x1f, sizeof mn);
-  g(i, 2, cnt) printf("%d ", belong[i]); puts("");
+  g(i, 2, cnt) printf("%d ", belong[i]);
+  puts("");
   for (int i = 2; i <= cnt; i += 2) {
     mn[belong[i]] = std::min(mn[belong[i]], i / 2);
   }
   // printf("%d\n", cnt);
-  for (int i = 2; i <= cnt; i += 2) printf("%d ", mn[belong[i]]); puts("");
+  for (int i = 2; i <= cnt; i += 2) printf("%d ", mn[belong[i]]);
+  puts("");
   // g(i, 1, n) printf("%d ", belong[i]); puts("");
   return 0;
 }

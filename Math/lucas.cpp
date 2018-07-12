@@ -4,10 +4,10 @@
  * @Example http://www.lydsy.com:808/JudgeOnline/problem.php?id=2111
  * @Notes Lucas's theorem + Calculating Inv
  */
-#include <cstdio>// NOLINT
-#include <cstring>// NOLINT
-#include <bits/stdc++.h>// NOLINT
-#include <cmath>// NOLINT
+#include <bits/stdc++.h>  // NOLINT
+#include <cmath>          // NOLINT
+#include <cstdio>         // NOLINT
+#include <cstring>        // NOLINT
 #define x1 x11
 #define y1 y11
 
@@ -17,14 +17,14 @@
 #define gd(x, y, z) for (int x = (y), __ = (z); x >= __; --x)
 
 #ifdef WIN32
-  #define LLD "%I64d"
-  #define LLU "%I64u"
+#define LLD "%I64d"
+#define LLU "%I64u"
 #else
-  #define LLD "%lld"
-  #define LLU "%llu"
+#define LLD "%lld"
+#define LLU "%llu"
 #endif
 
-typedef long long LL;// NOLINT
+typedef long long LL;  // NOLINT
 typedef long double real;
 
 const double INF = 1e100;
@@ -62,8 +62,9 @@ int main() {
   scanf("%lld%lld", &n, &p);
   init();
   gd(i, n, 1) {
-    sz[i] = sz[i << 1] + sz[i << 1|1] + 1;
-    f[i] = C(sz[i] - 1, sz[i << 1]) * ((i << 1) > n ? 1 : f[i << 1]) % p * ((i << 1 | 1) > n ? 1 : f[i << 1|1]) % p; // NOLINT
+    sz[i] = sz[i << 1] + sz[i << 1 | 1] + 1;
+    f[i] = C(sz[i] - 1, sz[i << 1]) * ((i << 1) > n ? 1 : f[i << 1]) % p *
+           ((i << 1 | 1) > n ? 1 : f[i << 1 | 1]) % p;  // NOLINT
   }
   printf("%lld\n", f[1]);
 
@@ -73,4 +74,3 @@ int main() {
 #endif
   return 0;
 }
-

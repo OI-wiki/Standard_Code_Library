@@ -3,12 +3,12 @@
  * @Copyright SATA
  * @Example http://hihocoder.com/problemset/problem/1127
  */
-#include <cstdio>// NOLINT
-#include <cstring>// NOLINT
-#include <queue>// NOLINT
-#include <algorithm>// NOLINT
-#include <bits/stdc++.h>// NOLINT
-#include <cmath>// NOLINT
+#include <bits/stdc++.h>  // NOLINT
+#include <algorithm>      // NOLINT
+#include <cmath>          // NOLINT
+#include <cstdio>         // NOLINT
+#include <cstring>        // NOLINT
+#include <queue>          // NOLINT
 #define x1 x11
 #define y1 y11
 
@@ -18,14 +18,14 @@
 #define gd(x, y, z) for (int x = (y), __ = (z); x >= __; --x)
 
 #ifdef WIN32
-  #define LLD "%I64d"
-  #define LLU "%I64u"
+#define LLD "%I64d"
+#define LLU "%I64u"
 #else
-  #define LLD "%lld"
-  #define LLU "%llu"
+#define LLD "%lld"
+#define LLU "%llu"
 #endif
 
-typedef long long LL;// NOLINT
+typedef long long LL;  // NOLINT
 typedef long double real;
 
 const double INF = 1e100;
@@ -42,18 +42,26 @@ struct node {
 int head[MAXN], cnt = 1;
 inline void add(int s, int t, int w) {
   // printf("``%d %d\n", s, t);
-  e[++cnt].t = t; e[cnt].x = head[s]; head[s] = cnt; e[cnt].w = w;
-  e[++cnt].t = s; e[cnt].x = head[t]; head[t] = cnt; e[cnt].w = 0;
+  e[++cnt].t = t;
+  e[cnt].x = head[s];
+  head[s] = cnt;
+  e[cnt].w = w;
+  e[++cnt].t = s;
+  e[cnt].x = head[t];
+  head[t] = cnt;
+  e[cnt].w = 0;
 }
 std::queue<int> Q;
 int dis[MAXN];
 int S, T;
 bool bfs() {
   memset(dis, -1, sizeof dis);
-  Q.push(S); dis[S] = 0;
+  Q.push(S);
+  dis[S] = 0;
   int u;
   while (!Q.empty()) {
-    u = Q.front(); Q.pop();
+    u = Q.front();
+    Q.pop();
     for (int i = head[u]; i; i = e[i].x) {
       if (e[i].w && dis[e[i].t] == -1) {
         dis[e[i].t] = dis[u] + 1;
@@ -69,7 +77,9 @@ int dfs(int x, int fl) {
   for (int i = head[x]; i; i = e[i].x) {
     if (e[i].w && dis[e[i].t] == dis[x] + 1) {
       w = dfs(e[i].t, std::min(e[i].w, fl - used));
-      e[i].w -= w; e[i ^ 1].w += w; used += w;
+      e[i].w -= w;
+      e[i ^ 1].w += w;
+      used += w;
       if (used == fl) return fl;
     }
   }
@@ -86,10 +96,12 @@ void init(int s) {
   // printf("??%d\n", s);
   while (!Q.empty()) Q.pop();
   // memset(is, -1, sizeof is);
-  Q.push(s); is[s] = 0;
+  Q.push(s);
+  is[s] = 0;
   int u;
   while (!Q.empty()) {
-    u = Q.front(); Q.pop();
+    u = Q.front();
+    Q.pop();
     for (int i = head[u]; i; i = e[i].x) {
       if (e[i].w && is[e[i].t] == -1) {
         is[e[i].t] = is[u] ^ 1;
@@ -100,7 +112,8 @@ void init(int s) {
 }
 int main() {
   scanf("%d%d", &n, &m);
-  S = n + n + 2; T = S + 1;
+  S = n + n + 2;
+  T = S + 1;
   f(i, 0, m) {
     scanf("%d%d", &u, &v);
     add(u, v, 1);

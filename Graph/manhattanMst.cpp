@@ -3,10 +3,10 @@
  * @Copyright SATA
  * @Example http://poj.org/problem?id=3241
  */
-#include <cstdio>// NOLINT
-#include <cstring>// NOLINT
-#include <algorithm>// NOLINT
-#include <cmath>// NOLINT
+#include <algorithm>  // NOLINT
+#include <cmath>      // NOLINT
+#include <cstdio>     // NOLINT
+#include <cstring>    // NOLINT
 #define x1 x11
 #define y1 y11
 
@@ -16,14 +16,14 @@
 #define gd(x, y, z) for (int x = (y), __ = (z); x >= __; --x)
 
 #ifdef WIN32
-  #define LLD "%I64d"
-  #define LLU "%I64u"
+#define LLD "%I64d"
+#define LLU "%I64u"
 #else
-  #define LLD "%lld"
-  #define LLU "%llu"
+#define LLD "%lld"
+#define LLU "%llu"
 #endif
 
-typedef long long LL;// NOLINT
+typedef long long LL;  // NOLINT
 typedef long double real;
 
 const double INF = 1e100;
@@ -32,7 +32,7 @@ const double pi = acos(-1.0);
 const double EPS = 1e-8;
 const int MAXN = 100033;
 
-inline void read(int &x) { // NOLINT
+inline void read(int& x) {  // NOLINT
   char c = getchar();
   int f = 1;
   while (c < '0' || c > '9') {
@@ -52,16 +52,16 @@ struct node {
   int x, y, p;
   inline node() {}
   inline node(int X, int Y, int P) {
-    x = X; y = Y; p = P;
+    x = X;
+    y = Y;
+    p = P;
   }
 } a[MAXN], b[MAXN], e[MAXN << 2];
 inline bool cmp(const node& a, const node& b) {
   if (a.x == b.x) return a.y < b.y;
   return a.x < b.x;
 }
-inline bool cmpe(const node& a, const node& b) {
-  return a.p < b.p;
-}
+inline bool cmpe(const node& a, const node& b) { return a.p < b.p; }
 inline int lower(int x) {
   int lb = 1, rb = n, res, md;
   while (lb <= rb) {
@@ -82,18 +82,22 @@ inline int dis(int x, int y) {
   return abs(a[x].x - a[y].x) + abs(a[x].y - a[y].y);
 }
 inline void ins(int x, int p) {
-  for (; x <= n; x += x & -x) if (w[p] <= w[t[x]]) t[x] = p; // NOLINT
+  for (; x <= n; x += x & -x)
+    if (w[p] <= w[t[x]]) t[x] = p;  // NOLINT
 }
 inline int ask(int x) {
   int res = 0;
-  for (; x; x -= x & -x) if (w[t[x]] <= w[res]) res = t[x]; // NOLINT
+  for (; x; x -= x & -x)
+    if (w[t[x]] <= w[res]) res = t[x];  // NOLINT
   return res;
 }
 inline int get(int x) {
   int tee = fa[x], q;
   while (tee != fa[tee]) tee = fa[tee];
   while (x != tee) {
-    q = fa[x]; fa[x] = tee; x = q;
+    q = fa[x];
+    fa[x] = tee;
+    x = q;
   }
   return tee;
 }
@@ -144,7 +148,7 @@ LL getMST() {
   g(i, 1, m) if (get(e[i].x) != get(e[i].y)) {
     fa[fa[e[i].x]] = fa[e[i].y];
     --cnt;
-//    printf("%d %d: %d %d\n", cnt, e[i].p, e[i].x, e[i].y);
+    //    printf("%d %d: %d %d\n", cnt, e[i].p, e[i].x, e[i].y);
     if (cnt == k) return e[i].p;
   }
 }
@@ -154,7 +158,8 @@ int main() {
   freopen("a.out", "w", stdout);
 #endif
 
-  read(n); read(k);
+  read(n);
+  read(k);
   g(i, 1, n) read(a[i].x), read(a[i].y);
   printf("%lld\n", getMST());
 

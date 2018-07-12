@@ -3,11 +3,11 @@
  * @Copyright SATA
  * @Example http://hihocoder.com/problemset/problem/1032
  */
-#include <cstdio>// NOLINT
-#include <cstring>// NOLINT
-#include <algorithm>// NOLINT
-#include <bits/stdc++.h>// NOLINT
-#include <cmath>// NOLINT
+#include <bits/stdc++.h>  // NOLINT
+#include <algorithm>      // NOLINT
+#include <cmath>          // NOLINT
+#include <cstdio>         // NOLINT
+#include <cstring>        // NOLINT
 #define x1 x11
 #define y1 y11
 
@@ -17,14 +17,14 @@
 #define gd(x, y, z) for (int x = (y), __ = (z); x >= __; --x)
 
 #ifdef WIN32
-  #define LLD "%I64d"
-  #define LLU "%I64u"
+#define LLD "%I64d"
+#define LLU "%I64u"
 #else
-  #define LLD "%lld"
-  #define LLU "%llu"
+#define LLD "%lld"
+#define LLU "%llu"
 #endif
 
-typedef long long LL;// NOLINT
+typedef long long LL;  // NOLINT
 typedef long double real;
 
 const double INF = 1e100;
@@ -49,7 +49,8 @@ void get() {
     }
     while (s[i + p[i]] == s[i - p[i]]) ++p[i];
     if (i + p[i] > mx) {
-      mx = i + p[i]; id = i;
+      mx = i + p[i];
+      id = i;
     }
   }
 }
@@ -58,7 +59,8 @@ int main() {
   while (T--) {
     scanf("%s", buf);
     n = strlen(buf);
-    s[0] = '$'; s[1] = '#';
+    s[0] = '$';
+    s[1] = '#';
     f(i, 0, n) {
       s[i * 2 + 2] = buf[i];
       s[i * 2 + 3] = '#';

@@ -3,10 +3,10 @@
  * @Copyright SATA
  * @Example http://codevs.cn/problem/1200/
  */
-#include <cstdio>// NOLINT
-#include <cstring>// NOLINT
-#include <bits/stdc++.h>// NOLINT
-#include <cmath>// NOLINT
+#include <bits/stdc++.h>  // NOLINT
+#include <cmath>          // NOLINT
+#include <cstdio>         // NOLINT
+#include <cstring>        // NOLINT
 #define x1 x11
 #define y1 y11
 
@@ -16,14 +16,14 @@
 #define gd(x, y, z) for (int x = (y), __ = (z); x >= __; --x)
 
 #ifdef WIN32
-  #define LLD "%I64d"
-  #define LLU "%I64u"
+#define LLD "%I64d"
+#define LLU "%I64u"
 #else
-  #define LLD "%lld"
-  #define LLU "%llu"
+#define LLD "%lld"
+#define LLU "%llu"
 #endif
 
-typedef long long LL;// NOLINT
+typedef long long LL;  // NOLINT
 typedef long double real;
 
 const double INF = 1e100;
@@ -33,9 +33,10 @@ const double EPS = 1e-8;
 const int MAXN = 100033;
 
 int a, b;
-int extGcd(int a, int b, int &x, int &y) { // NOLINT
+int extGcd(int a, int b, int &x, int &y) {  // NOLINT
   if (b == 0) {
-    x = 1; y = 0;
+    x = 1;
+    y = 0;
     return a;
   }
   int res = extGcd(b, a % b, y, x);
@@ -59,5 +60,3 @@ int main() {
 #endif
   return 0;
 }
-
-

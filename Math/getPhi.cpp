@@ -3,10 +3,10 @@
  * @Copyright SATA
  * @Example http://poj.org/problem?id=3090
  */
-#include <cstdio>// NOLINT
-#include <cstring>// NOLINT
-#include <bits/stdc++.h>// NOLINT
-#include <cmath>// NOLINT
+#include <bits/stdc++.h>  // NOLINT
+#include <cmath>          // NOLINT
+#include <cstdio>         // NOLINT
+#include <cstring>        // NOLINT
 #define x1 x11
 #define y1 y11
 
@@ -16,14 +16,14 @@
 #define gd(x, y, z) for (int x = (y), __ = (z); x >= __; --x)
 
 #ifdef WIN32
-  #define LLD "%I64d"
-  #define LLU "%I64u"
+#define LLD "%I64d"
+#define LLU "%I64u"
 #else
-  #define LLD "%lld"
-  #define LLU "%llu"
+#define LLD "%lld"
+#define LLU "%llu"
 #endif
 
-typedef long long LL;// NOLINT
+typedef long long LL;  // NOLINT
 typedef long double real;
 
 const double INF = 1e100;
@@ -40,7 +40,8 @@ void get() {
   phi[1] = 1;
   f(i, 2, 100000) {
     if (!vis[i]) {
-      pri[cnt++] = i; phi[i] = i - 1;
+      pri[cnt++] = i;
+      phi[i] = i - 1;
     }
     f(j, 0, cnt) {
       if (i * pri[j] > 100000) break;
@@ -48,11 +49,12 @@ void get() {
       if (i % pri[j] == 0) {
         phi[i * pri[j]] = phi[i] * pri[j];
         break;
-      } else phi[i * pri[j]] = phi[i] * (pri[j] - 1); // NOLINT
+      } else
+        phi[i * pri[j]] = phi[i] * (pri[j] - 1);  // NOLINT
     }
   }
 }
-LL m. ans;
+LL m.ans;
 LL getPhi(LL x) {
   LL t = x;
   for (LL i = 2; i <= m; ++i) {
@@ -90,5 +92,3 @@ int main() {
 #endif
   return 0;
 }
-
-
