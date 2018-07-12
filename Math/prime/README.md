@@ -1,9 +1,9 @@
-# Prime  
+# Prime
 
-This collection of prime-related algorithms provides you with ways to solve these problems:  
+This collection of prime-related algorithms provides you with ways to solve these problems:
 
-1. Is it a prime?  
-2. I need a primelist.  
+1.  Is it a prime?
+2.  I need a primelist.
 
 Check this [eulerPrimelistGenerating.cpp](eulerPrimelistGenerating.cpp).
 

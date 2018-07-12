@@ -1,0 +1,25 @@
+{
+  "name": "standard_code_library",
+  "version": "1.0.0",
+  "description": "standard_code_library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ir1d/Standard_Code_Library.git"
+  },
+  "keywords": [
+    "standard_code_library"
+  ],
+  "author": "Ir1d",
+  "license": "SATA",
+  "bugs": {
+    "url": "https://github.com/Ir1d/Standard_Code_Library/issues"
+  },
+  "homepage": "https://github.com/Ir1d/Standard_Code_Library#readme",
+  "dependencies": {
+    "clang-format": "^1.2.3"
+  }
+}

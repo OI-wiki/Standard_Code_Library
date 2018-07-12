@@ -39,3 +39,6 @@ a
 *.res
 
 Temp
+node_modules/
+package-lock.json
+
